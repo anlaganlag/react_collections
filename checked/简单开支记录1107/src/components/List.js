@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { ListGroup, ListGroupItem,Badge} from "reactstrap";
 
 import { useCTX } from "../GlobalState";
@@ -31,13 +31,13 @@ export default function List() {
 
           if (idx < 14) {
             return (
-              // <ListGroupItem key={id} >
-              //   {date} {weekN}  
-              //   <Badge pill>{weekD}</Badge>
+              <ListGroupItem key={id} >
+                {date} {weekN}  
+                <Badge pill>{weekD}</Badge>
                 
-              //   {amount}小时 {cur} {total}
-              // </ListGroupItem>
-                    <ListGroupItem className="justify-content-between">Morbi leo risus <Badge pill>1</Badge></ListGroupItem>
+                {amount}小时 {cur} {total}
+              </ListGroupItem>
+                    // <ListGroupItem className="justify-content-between">Morbi leo risus <Badge pill>1</Badge></ListGroupItem>
             );
           }
         })}
