@@ -1,0 +1,74 @@
+.registerCard{
+    width: 500px;
+    border: 1px solid lightgray;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; top: 50px;
+    padding: 30px;
+  }
+
+.registerTitle{
+    width: 100px;
+    height: 40px;
+  }
+  
+.registerHead{
+    font-display: inherit;
+    font-family: 'Segoe UI';
+    font-size: 25px;
+    color: #3f51b5;
+    text-align: left;
+}
+
+.registerText{
+    text-align: left;
+    font-size: small;
+    position: relative; bottom: 5px;
+    font-size: 15px;
+}
+
+#firstname,#password{
+    width: 190px;
+    height: 20px;   
+}
+
+#lastname,#confirm_password{
+    width: 190px;
+    height: 20px;   
+}
+
+.first, .password{
+float: left;
+}
+        
+.last,.confirm{
+float: right;
+position: relative; right: 3em;
+}
+
+#email{
+width:424px;
+height: 20px;
+}
+ 
+.passwordText{
+float: left;
+font-size: 14px;    
+}
+
+.registerbutton
+{
+float: left;
+margin-left: 370px;
+margin-top:25px;
+}
+
+.login{
+    float: left;
+    position: relative; top : 3.2em;
+}    
+
+.registerShowPassword{
+    position: relative; top: 1.8em; left:15em ;
+}

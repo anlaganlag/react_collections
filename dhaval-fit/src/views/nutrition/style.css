@@ -1,0 +1,28 @@
+.blogText{
+    padding-left: 200px;
+    font-size: 15px;
+    padding-right: 200px;
+    padding-bottom: 200px;
+}
+.tldrText{
+    background-color: #ccc;
+    font-size: 15;
+    font-family: sans-serif;
+    padding: 5px;
+}
+p,a{
+    font-size: 15px;
+}
+h3{
+    font-weight:800;
+    font-size: 20px;
+    text-align: center;
+
+}
+[data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
+.site-collapse-custom-collapse .site-collapse-custom-panel {
+    background:  #f5f5ff;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 0px;
+  }

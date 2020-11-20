@@ -1,0 +1,32 @@
+.card{
+    width: 320px;
+    min-height: 100px;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-top: 10px;
+    transition-property: opacity,box-shadow,transform;
+    transition-timing-function: ease-in;
+    transition-duration: 1s;
+}
+.titleDisplay{
+    display: flex;
+    flex-direction: row;
+ 
+    }
+.label1{
+    width: 230px;
+    padding: 10px;
+    margin-top: 15px;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    text-align: start;
+     
+}
+.pinned{
+    fill: grey;
+    cursor: pointer;
+}
+
+.pinned:hover{
+    fill:black;
+}

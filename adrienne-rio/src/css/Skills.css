@@ -1,0 +1,9 @@
+.skillTitle {
+  margin-top: 5;
+  color: #8d93ab;
+  cursor: pointer;
+}
+
+.skillTitle:hover {
+  color: #000;
+}

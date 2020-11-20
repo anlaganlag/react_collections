@@ -1,0 +1,15 @@
+
+.extraInfo {
+	margin: 10px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.extraText {
+	font-size: large;
+	color: #5450a9;
+	font-family: "Dosis", sans-serif;
+	font-weight: 500;
+	margin-bottom: 5px;
+	margin-left: 20px;
+}

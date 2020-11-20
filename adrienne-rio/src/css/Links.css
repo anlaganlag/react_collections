@@ -1,0 +1,28 @@
+.styledLink {
+  text-decoration: none;
+  color: #1e2022;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.styledLink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 7px;
+  /* crayola neon yellow */
+  background: #faed27;
+  transition: width 0.3s;
+}
+
+.styledLink:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.styledIcon:hover {
+  color: #faed27;
+}
+
+.active {
+  color: #faed27;
+}

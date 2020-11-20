@@ -1,0 +1,344 @@
+@import "../../../node_modules/antd/dist/antd.css";
+
+.site-layout-content {
+	background: #f5f5ff;
+	padding: 100px 24px 24px 24px;
+	min-height: 280px;
+	font-family: "Dosis", sans-serif;
+	margin-top: -20px;
+}
+html {
+	scroll-behavior: smooth;
+}
+.logo {
+	width: 120px;
+	height: 31px;
+	margin: 16px 24px 16px 0;
+	float: left;
+}
+.nav {
+	background-color: #5450a8;
+}
+.header {
+	display: grid;
+	grid-template-columns: min-content 4fr 3fr;
+	align-items: center;
+	/* 	background-image: url("./backRings.gif");
+	background-size: 600px; */
+	margin-bottom: 200px;
+}
+.mainSvg {
+	width: 50%;
+	margin-left: 30%;
+	grid-column: 2;
+	grid-row: 1;
+	justify-self: flex-start;
+	margin-left: -2%;
+}
+h1 {
+	font: 500 5rem/1 "Dosis";
+	text-transform: uppercase;
+	color: #5450a9;
+	font-family: "Dosis", sans-serif;
+	@media (min-width: 850px) {
+		font: 700 4.8rem/1 "Dosis";
+	}
+}
+h2 {
+	font: 500 5rem/1 "Dosis";
+	text-transform: uppercase;
+	color: #5450a9;
+	padding: 0.5rem 1rem 0.5rem 0.5rem;
+	font-family: "Dosis", sans-serif;
+	@media (min-width: 850px) {
+		font: 700 4.8rem/1 "Dosis";
+	}
+}
+
+.cardCont {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.barSvg {
+	width: 70%;
+	height: 80%;
+	margin: 0px auto;
+}
+.goalSvg {
+	width: 5%;
+	height: 5%;
+}
+.workCardMeta {
+	display: flex;
+	/*   justify-content: center;
+ */
+	align-items: center;
+}
+.cardTitle {
+	color: #6f4a8e;
+	/* padding: 0.5rem 1rem 0.5rem 0.5rem; */
+	font-family: "Dosis", sans-serif;
+	font-weight: 500;
+}
+.ant-card-head {
+	background-color: #5450a8;
+}
+
+.dayTag {
+	padding: 5px;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.site-statistic-demo-card {
+	padding: 10px;
+}
+
+.infoPop {
+	justify-content: center;
+	display: grid;
+}
+
+.stepsIcon {
+	width: 50px;
+	height: 50px;
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/1022/1022371.svg");
+	background-size: cover;
+	transition-duration: 2s;
+}
+.stepsIcon:hover {
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/1022/1022320.svg");
+}
+
+.cardNav {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+}
+
+.icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 16em;
+	height: 16em;
+	transform: translate(-50%, -50%);
+}
+
+/* Calendar */
+
+.calendar {
+	perspective: 40em;
+	color: #12395f;
+}
+
+.calendar i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 6em;
+	height: 6em;
+	transform: translate(-50%, -50%);
+	color: inherit;
+	background-color: #fff;
+	border: 0.25em solid;
+	background-image: linear-gradient(
+			to bottom,
+			currentColor 10%,
+			rgba(255, 255, 255, 0) 10%
+		),
+		linear-gradient(to left, currentColor 10%, rgba(255, 255, 255, 0) 10%);
+	background-size: 1.25em;
+	background-position: -0.0625em -0.1875em;
+	border-radius: 0.1875em;
+	box-shadow: inset 0 1.0625em grey;
+}
+
+/*    .calendar i:last-child {
+	transform-origin: 50% -1.5%;
+	animation: flip 1.35s infinite linear;
+  }  */
+
+.calendar i:before {
+	content: "";
+	position: absolute;
+	top: 2.4375em;
+	left: 3.6875em;
+	display: block;
+	width: 1.125em;
+	height: 1.125em;
+	background-color: #ffdea3;
+}
+
+.calendar:before {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 50%;
+	width: 0.25em;
+	height: 1.5625em;
+	margin: 3.9375em 0 0 -1.875em;
+	transform: translate(-50%, 0);
+	transform-origin: 0 0;
+	color: inherit;
+	background-color: currentColor;
+	border-radius: 0.1875em;
+	box-shadow: 3.75em 0 currentColor;
+}
+
+@keyframes flip {
+	0%,
+	62% {
+		transform: translate(-50%, -50%) rotateX(0) scaleY(1);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotateX(265deg) scaleY(0.5);
+	}
+}
+
+@keyframes mask {
+	63% {
+		transform: translate(-50%, 0%);
+	}
+	74% {
+		transform: translate(-50%, 0%) scaleY(0.5);
+	}
+	74.1% {
+		transform: translate(-50%, 0%) scaleY(1);
+	}
+}
+
+.sectionHead {
+	text-align: center;
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 80px;
+	padding-top: 60px;
+}
+
+/* menu */
+#menu {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 0 20px;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5),
+		inset 0 -1px 0 rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.15);
+	background: #f5f5ff;
+}
+
+#menu,
+#menu ul {
+	list-style: none;
+}
+
+#menu > li {
+	float: left;
+	position: relative;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.25);
+	perspective: 1000px;
+}
+
+#menu > li:first-child {
+	border-left: 1px solid rgba(255, 255, 255, 0.25);
+	box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1), 1px 0 0 rgba(255, 255, 255, 0.25);
+}
+
+#menu a {
+	display: block;
+	position: relative;
+	z-index: 10;
+	padding: 13px 20px 13px 20px;
+	text-decoration: none;
+	color: rgba(75, 75, 75, 1);
+	line-height: 1;
+	font-weight: 600;
+	font-size: 16px;
+	letter-spacing: -0.05em;
+	background: transparent;
+	/* 	text-shadow: 0 1px 1px rgba(255,255,255,.9);
+ */
+	transition: all 0.25s ease-in-out;
+}
+
+#menu > li:hover > a {
+	background: #333;
+	color: rgba(0, 223, 252, 1);
+	text-shadow: none;
+}
+
+#menu li ul {
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	width: 200px;
+	padding: 0;
+	opacity: 0;
+	visibility: hidden;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background: transparent;
+	overflow: hidden;
+	transform-origin: 50% 0%;
+}
+
+#menu li:hover ul {
+	padding: 15px 0;
+	background: #333;
+	opacity: 1;
+	visibility: visible;
+	box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.5);
+	animation-name: swingdown;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+}
+
+@keyframes swingdown {
+	0% {
+		opacity: 0.99999;
+		transform: rotateX(90deg);
+	}
+
+	30% {
+		transform: rotateX(-20deg) rotateY(5deg);
+		animation-timing-function: ease-in-out;
+	}
+
+	65% {
+		transform: rotateX(20deg) rotateY(-3deg);
+		animation-timing-function: ease-in-out;
+	}
+
+	100% {
+		transform: rotateX(0);
+		animation-timing-function: ease-in-out;
+	}
+}
+
+#menu li li a {
+	padding-left: 15px;
+	font-weight: 400;
+	color: #ddd;
+	text-shadow: none;
+	border-top: dotted 1px transparent;
+	border-bottom: dotted 1px transparent;
+	transition: all 0.15s linear;
+}
+
+#menu li li a:hover {
+	color: rgba(0, 223, 252, 1);
+	border-top: dotted 1px rgba(255, 255, 255, 0.15);
+	border-bottom: dotted 1px rgba(255, 255, 255, 0.15);
+	background: rgba(0, 223, 252, 0.02);
+}
+
+.statsSecond {
+	display: contents;
+}

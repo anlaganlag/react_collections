@@ -1,0 +1,7 @@
+.myImage {
+  background: url(../images/profile.jpg) 30% 50% no-repeat; /* 50% 50% centers image in div */
+  width: 25vw;
+  height: 400px;
+  border-radius: 20px;
+  margin-top: 2vh;
+}

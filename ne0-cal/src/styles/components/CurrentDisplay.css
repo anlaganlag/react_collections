@@ -1,0 +1,14 @@
+.current-display {
+
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+.current-display >p {
+    margin: 0;
+}

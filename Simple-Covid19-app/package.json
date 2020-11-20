@@ -1,0 +1,8 @@
+{
+  "name": "Simple-Covid19-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:sudo-Erno/Simple-Covid19-app.git",
+  "author": "anlaganlag <tanjhu@163.com>",
+  "license": "MIT"
+}

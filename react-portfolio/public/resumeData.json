@@ -1,0 +1,154 @@
+{
+  "main": {
+    "name": "GalFond",
+    "occupation": "ReactJS 开发工程师 github@anlaganlag",
+    "description": "精通React 熟练开发移动端/Web/小程序/爬虫及数据处理",
+    "image": "IG_Sonny.jpeg",
+    "bio": "Hi~我的英文名字是Galfond, 前端ReactJS开发者. 主接各类ReactJS项目,熟悉多种业务场景开发,懂业务逻辑.兼职开发Python爬虫项目.",
+    "contactmessage": "自学coding..目标每周100小时学习",
+    "email": "Galfond@163.com",
+    "phone": "+86 153 3885 9940",
+    "address": {
+      "street": "南山 粤兴二路 7号 ",
+      "city": "深圳",
+      "state": "广东",
+      "zip": "德兴大厦11单元07房"
+    },
+    "website": "http://www.timbakerdev.com",
+    "resumedownload": "http://timbakerdev.com",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/sonny.sangha.3",
+        "className": "fa fa-linux"
+      },
+
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/ssssangha/",
+        "className": "fa fa-android"
+      },
+      
+
+      {
+        "name": "github",
+        "url": "http://github.com/sonnysangha",
+        "className": "fa fa-globe"
+      }
+      ,
+      {
+        "name": "github",
+        "url": "http://github.com/sonnysangha",
+        "className": "fa fa-desktop"
+      },
+
+      {
+        "name": "github",
+        "url": "http://github.com/sonnysangha",
+        "className": "fa fa-mobile-phone"
+      },
+      {
+        "name": "github",
+        "url": "http://github.com/sonnysangha",
+        "className": "fa fa-ellipsis-h"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "技能简介",
+    "education": [
+      {
+        "school": "  深圳大学  ",
+        "degree": "Masters in  Cell Biology",
+        "graduated": "June 2014",
+        "description": "  优异毕业 "
+      }
+    ],
+    "work": [
+      {
+        "company": " 简易微信",
+        "title": "Team Member && React Specialist",
+        "years": "April 2020 - Present",
+        "description": "Teaching ReactJS to thousands of students."
+      },
+      {
+        "company": " 病毒追踪",
+        "title": "Software Engineer",
+        "years": "Nov 2019 - April 2020",
+        "description": "Building MrQ, a gambling website."
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "100%"
+      },
+      {
+        "name": "CSS",
+        "level": "95%"
+      },
+      {
+        "name": "Linux Bash",
+        "level": "60%"
+      },
+      {
+        "name": "Python",
+        "level": "90%"
+      },
+      {
+        "name": "HTML5",
+        "level": "80%"
+      },
+      {
+        "name": "SQL",
+        "level": "80%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "MERN Stack WhatsApp Clone",
+        "category": "WhatsApp Clone built with MERN (MongoDB, ExpressJS, ReactJS, NodeJS)",
+        "image": "whatsapp-mern.jpeg",
+        "url": "https://www.youtube.com/watch?v=gzdQDxzW2Tw"
+      },
+      {
+        "title": "MERN Stack TikTok Clone",
+        "category": "TikTok Clone built with MERN (MongoDB, ExpressJS, ReactJS, NodeJS)",
+        "image": "tiktok-mern.jpeg",
+        "url": "https://www.youtube.com/watch?v=g8yGxDMyGiE"
+      },
+      {
+        "title": "Facebook Clone with React",
+        "category": "Facebook Clone buiellipsislt with ReactJS",
+        "image": "facebook-clone.png",
+        "url": "https://www.youtube.com/watch?v=B-kxUMHBxNo"
+      },
+      {
+        "title": "Airbnb Clone",
+        "category": "Facebook Clone built with ReactJS",
+        "image": "airbnb-clone.jpeg",
+        "url": "https://www.youtube.com/watch?v=BtJeH_-XYaA"
+      },
+      {
+        "title": "Netflix Clone",
+        "category": "Facebook Clone built with ReactJS",
+        "image": "netflix-clone.jpeg",
+        "url": "https://www.youtube.com/watch?v=XtMThy8QKqU&t=9358s"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "ReactJS过硬..热情...热心..聪明...技术精湛..能及时迅速实现变更的需求..真的物有所值...最高性价比..合作超级愉快..技术全面..最流畅的英文沟通体验..",
+        "user": "客户是这么评价我的"
+      },
+      {
+        "text": "我见过最有活力的开发者..他是自学的没有做个正式职位..但是他的coding时间和技能远朝一般crud boy..不远的将来将成为最好的开发者",
+        "user": "一位热心的客户兼好朋友 Steve Woznia "
+      }
+    ]
+  }
+}

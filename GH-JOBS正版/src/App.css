@@ -1,0 +1,16 @@
+/*  */
+
+h1{
+    text-align: center;
+}
+
+.apply{
+    font-size: 0.4em;
+    background-color: #eee; 
+}
+.apply p:first-child::before{
+    content: "申請方式:";
+    padding-left: 2em;
+    padding-right: 1em;
+
+}

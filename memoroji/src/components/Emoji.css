@@ -1,0 +1,14 @@
+.emoji {
+    height: 200px;
+    font-size: 100px;
+    text-align: center;
+}
+
+.emoji:hover {
+    background-color: gray;
+}
+
+.emoji.covered {
+    background-color: gray;
+    margin: 5px;
+}

@@ -1,0 +1,41 @@
+*{
+  box-sizing: border-box
+}
+
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+  margin-top: 3em;
+
+}
+#board img {
+  width: 25%;
+}
+#board img[finished]{
+  /* outline-color: crimson; */
+  /* outline-width: 1px; */
+  border: 1px solid purple;
+  width: 25%;
+
+
+}
+
+
+#history {
+  display: flex;
+  width: 400px;
+  flex-flow: row wrap;
+  flex: 0 0 25%;
+  border: blue;
+}
+
+
+#history img {
+  width: 100px;
+  margin: .2em;
+  border: 1px solid #000;
+}
+

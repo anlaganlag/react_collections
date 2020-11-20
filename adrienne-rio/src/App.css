@@ -1,0 +1,57 @@
+/* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Montserrat:wght@200;300;500;600;700&display=swap"); */
+
+@font-face {
+  font-family: "TT Commons Regular";
+  src: url(./fonts/TTCommons-Regular.ttf);
+}
+
+@font-face {
+  font-family: "TT Commons Medium";
+  src: url(./fonts/TTCommons-Medium.ttf);
+}
+
+@font-face {
+  font-family: "TT Commons Bold";
+  src: url(./fonts/TTCommons-Bold.ttf);
+}
+
+.App {
+  /* display: flex; */
+  height: 100vh;
+  justify-content: center;
+}
+
+.mainTitle {
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+  top: 20%;
+  padding-left: 70px;
+  justify-content: center;
+  flex: 1;
+  margin-bottom: 70px;
+  z-index: 1;
+}
+
+.socialLinks {
+  padding-right: 70px;
+  flex: none;
+  align-self: flex-end;
+}
+
+.App .arrow {
+  font-size: 80px;
+  margin-bottom: 10px;
+  animation: slide 1s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 20px);
+  }
+}

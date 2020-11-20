@@ -1,0 +1,35 @@
+.Scare-Me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.Scare-Me span {
+  color: orange;  
+  text-transform: capitalize;
+
+}
+
+.Scare-Me img {
+  cursor: pointer;
+  margin-bottom: 5%;
+  max-width: 90%;
+  height: 100%;
+
+}
+.Scare-Me span.created {
+  color: green;
+  font-size: .7em;  
+
+}
+label {
+  color: white;
+  font-size: .9em;  
+  opacity: .5;
+
+}

@@ -1,0 +1,26 @@
+.display {
+    width: 472px;
+    height: 200px;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    background: linear-gradient(317.7deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #4C5862;
+    background-blend-mode: soft-light, normal;
+    border: 1px solid #4C5862;
+    box-sizing: border-box;
+    
+    /* Display-Inner */
+    box-shadow: inset -5px -5px 10px #414558, inset 5px 5px 10px #414558;
+    border-radius: 8px;
+    display: grid;
+    place-items: end;
+    grid-template-rows: 4fr 1fr;
+    gap: 0.6rem;
+}
+
+@media (max-width: 500px) {
+    .display {
+        width: 80%;
+        height: 80%;
+        align-self: flex-end;
+    }
+}

@@ -1,0 +1,18 @@
+.calculator {
+    display: grid;
+    place-items: center;
+    background: #ECEDF1;
+    /* Neo-Shadow 1 */
+    box-shadow: -16px -16px 32px #FAFBFF, 16px 16px 32px #A6ABBD;
+    border-radius: 32px;
+    width: 536px;
+    height: 904px;
+
+}
+
+@media (max-width: 500px) {
+    .calculator {
+        width: 100%;
+        height: 100%;
+    }
+}

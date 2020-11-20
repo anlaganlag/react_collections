@@ -1,0 +1,21 @@
+.errorMsg{
+  border: 2px solid red;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  width: 20em;
+  height: 6em;
+  overflow: auto;
+
+}
+
+.successMsg{
+  border: 2px solid green;
+  background-color: green;
+  color: whitesmoke;
+  text-align: center;
+  width: 4em;
+  height: 4em;
+  overflow: auto;
+
+}

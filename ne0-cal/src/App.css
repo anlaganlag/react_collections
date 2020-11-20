@@ -1,0 +1,36 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e5e5e5;
+    padding: 2.4rem;
+    height: 100%;
+    width: 100%;
+}
+
+.App-header {
+    display: grid;
+    place-items: center;
+    
+
+}
+
+@media (max-width: 500px) {
+    .App {
+        padding: 1.2rem;
+    }
+    .App-header {
+        width: 90%;
+        height: 80%;
+    }
+}
+
+@media (max-width: 360px) {
+    .App {
+        padding: 1.2rem;
+    }
+    .App-header {
+        width: 90%;
+        height: 90%;
+    }
+}

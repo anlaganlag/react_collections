@@ -1,0 +1,79 @@
+body {
+  background-color: lightyellow;
+}
+ul li {
+  margin-top: .3em;
+}
+li a {
+  text-decoration:none;
+  color: green;
+  font-weight: bolder;
+}
+ul li span{
+  margin-left: 1em;
+  font-size: 0.4em;
+}
+form input {
+  width: 25vw;
+}
+form input~button{
+  font-size: .4em;
+  margin: 0 0 .5em .5em;
+}
+
+
+p button{
+  color:orangered;
+  font-weight: bolder;
+  border-radius: 50%;
+}
+
+
+
+/* 5是因为前面有1个置顶和3个主搜索词按钮 css是从1开始计数 */
+p button:nth-child(n+4){
+  color: blue;
+  opacity: 25%;
+  font-size: .6em;
+  border-radius: .5em;
+
+}
+
+p button:nth-child(n+15){
+  color: green;
+  border-radius: 0px;
+}
+
+
+p.lessImportantTag button:nth-child(n+4){
+  color: green;
+  font-weight: bolder;
+  display: none;
+}
+
+
+
+
+
+
+button.BackgroundToggle{
+  border-radius: 100%;
+  opacity: 1;
+  margin: auto;
+  color:lightgray;
+  background-color: #444;
+  font-weight: bolder;
+}
+
+button.toTop{
+  color:black;
+  opacity: 100%;
+  
+}
+a:visited{
+  color: purple;
+}
+
+a:hover{
+  color: black;
+}
