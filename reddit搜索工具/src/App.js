@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "./App.css";
+import useKeyPress from "./useKeyPress"
 
 let initialKeyWordList = [
   "learnjavascript",
@@ -58,10 +59,15 @@ export default function App() {
   const [searchTerms, setSearchTerms] = useState("reactjs");
   const [history, setHistory] = useState(initialKeyWordList);
   //隐藏不重要的搜索记录
-  const [isHided, setisHided] = useState(true);
   //是否可以删除或者置顶
-  const [delState, setEditState] = useState(false);
+  // const [delState, setEditState] = useState(false);
   const [onTop, setonTop] = useState(false);
+  const openPress = useKeyPress('o');
+  const delPress = useKeyPress('d');
+  console.log(openPress, typeof openPress)
+
+
+
   //coding technology software cscareerquestions
   // Update the searchTerms when the user presses enter
   useEffect(() => {
@@ -91,7 +97,7 @@ export default function App() {
   };
   const handleWord = (word, e) => {
     //删除该按钮
-    if (delState) {
+    if (delPress) {
       setHistory((history) => history.filter((h) => h !== word));
       // setEditState(() => !delState);
       return;
@@ -102,11 +108,11 @@ export default function App() {
     }
     setSearchTerms(e.target.textContent.trim());
   };
-  const handleBackground = () => {
-    setisHided(() => !isHided);
-  };
+  // const handleBackground = () => {
+  //   setisHided(() => !isHided);
+  // };
   console.log(history);
-  console.log(isHided);
+  // console.log(isHided);
 
   return (
     <>
@@ -118,13 +124,13 @@ export default function App() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button onClick={() => setEditState(() => !delState)}>
-          {delState ? "删除模式" : "搜索模式"}
+        <button >
+          {delPress ? "删除模式(D)" : "搜索模式(D)"}
         </button>
         <button className="toTop" onClick={() => setonTop(!onTop)}>
           {onTop ? "关闭置顶" : "置顶标签"}
         </button>
-        <p className={isHided ? "lessImportantTag" : ""}>
+        <p className={openPress ? "lessImportantTag" : ""}>
           {history.map((word) => (
             <button onClick={(e) => handleWord(word, e)} title={word}>
               {word}{" "}
@@ -136,8 +142,8 @@ export default function App() {
           {onTop ? "关闭置顶" : "开启置顶"}
         </button> */}
 
-        <button onClick={handleBackground} className="BackgroundToggle">
-          {isHided ? "更多" : "隐藏"}
+        <button className="BackgroundToggle">
+          {openPress ? "更多" : "隐藏"}(O)
         </button>
         <div>
           <p className="searchResultLabel">当前搜索关键词:{searchTerms}</p>
