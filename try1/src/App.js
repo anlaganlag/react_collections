@@ -1,4 +1,6 @@
 import React, { useReducer, useRef } from "react";
+import { useTranslation } from "react-i18next";
+
 
 function reducer(state, action) {
   switch (action.type) {
@@ -18,6 +20,8 @@ function reducer(state, action) {
 }
 
 function App() {
+  const { t } = useTranslation();
+
   const inputRef = useRef();
   const [items, dispatch] = useReducer(reducer, []);
 
@@ -28,6 +32,10 @@ function App() {
   }
   return (
     <>
+    <p>here</p>
+    <p>{t("我的信息")}</p>
+    <p>{t("背景")}</p>
+
       <form onSubmit={submit}>
         <input ref={inputRef} />
       </form>

@@ -1,0 +1,139 @@
+.sql-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sql-view__display {
+    flex: 1;
+    margin: 2rem;
+    overflow-y: scroll;
+}
+
+.sql-view__display-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.sql-view__ctr-box {
+    border-top: 1px solid #d2d2d2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.sql-view__ctr-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+}
+
+.sql-view__ctr-group p {
+    margin-left: 1rem;
+}
+
+.sql-view__url {
+    text-decoration: underline !important;
+}
+
+.sql-view__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d2d2d2;
+    margin: 0 0.75rem;
+}
+
+.sql-view__tooltip-close-btn,
+.sql-view__input-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-left: 1px solid #d2d2d2;
+    background-color: #ffffff;
+    padding: 1rem;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+
+.sql-view__loader {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -o-animation: load-me 1.5s infinite linear;
+    -moz-animation: load-me 1.5s infinite linear;
+    -webkit-animation: load-me 1.5s infinite linear;
+    animation: load-me 1.5s infinite linear;
+}
+
+.sql-view__tooltip {
+    border-bottom: 1px solid #d2d2d2;
+    background-color: #ffffff;
+}
+
+.sql-view__tooltip-header {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.sql-view__tooltip-paragraph {
+    margin: 1rem 0;
+}
+
+.sql-view__tooltip-title {
+    flex: 1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.sql-view__tooltip-list {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 0.75rem;
+}
+
+.sql-view__tooltip-close-btn {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-left: none;
+}
+
+@-webkit-keyframes load-me {
+    0% {
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load-me {
+    0% {
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

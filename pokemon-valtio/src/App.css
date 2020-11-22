@@ -7,5 +7,56 @@
 input {
   font-size: large;
   padding: 0.2em;
-  width: 100%
+  width: 100%;
 }
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  /* position: relative; */
+  table-layout: fixed;
+  width:100%
+}
+
+.table-header {
+  position: relative;
+}
+
+table th,
+table td {
+  height: 50px;
+  text-align: center;
+  border: 1px solid gray;
+}
+
+table thead th {
+  color: white;
+  background-color: #38f;
+  position:sticky;
+  top:0;
+}
+
+table tbody {
+  /* display: block; */
+  width: calc(100% + 2em); /*这里的8px是滚动条的宽度*/
+  height: 300px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+table tbody tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+table tbody tr:nth-of-type(even) {
+  background: #fff;
+}
+
+table tbody tr td {
+  border-bottom: none;
+}
+
