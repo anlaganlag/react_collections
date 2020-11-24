@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { proxy, useProxy } from "valtio";
 
 import "./App.css";
+import { trans } from "./trans";
 
 const URL =
   "https://gist.githubusercontent.com/wobsoriano/33c6fad65fc3ac1685574006683e15a8/raw/f8d792f5b2cf97eaaf9f0c2119918f333e348823/pokemon.json";
@@ -44,7 +45,34 @@ function FilterInput() {
 }
 
 function PokemonTable() {
-  const snapshot = useProxy(state);
+  // const [snapshot, setSnapshot] = useState([
+  //   {
+  //     id: 1,
+  //     name: {
+  //       english: "Bulbasaur",
+  //       japanese: "フシギダネ",
+  //       chinese: "妙蛙种子",
+  //       french: "Bulbizarre",
+  //     },
+  //     type: ["Grass", "Poison"],
+  //     base: {
+  //       HP: 45,
+  //       Attack: 49,
+  //       Defense: 49,
+  //       "Sp. Attack": 65,
+  //       "Sp. Defense": 65,
+  //       Speed: 45,
+  //     },
+  //   },
+  // ]);
+
+  // useEffect(() => {
+  //   setSnapshot(useProxy(state))
+
+  // }, [])
+  // setSnapshot(useProxy(state));
+
+  const snapshot = useProxy(state)
 
   return (
     <section className="table-box">
@@ -52,7 +80,7 @@ function PokemonTable() {
         <thead className="table-header">
           <th>序號</th>
           <th>神奇寶貝</th>
-          <th>品系</th>
+          <th className="col1">品系</th>
           <th>生命值</th>
           <th>攻擊</th>
           <th>防御</th>
@@ -69,7 +97,7 @@ function PokemonTable() {
               <tr key={p.id}>
                 <td>{p.id}</td>
                 <td>{p.name.chinese}</td>
-                <td>{p.type.join(", ")}</td>
+                <td>{p.type.map((i) => `${trans[i]}`).join(", ")}</td>
                 <td>{p.base.HP}</td>
                 <td>{p.base.Attack}</td>
                 <td>{p.base.Defense}</td>
@@ -87,7 +115,6 @@ function PokemonTable() {
     </section>
   );
 }
-
 function App() {
   useEffect(() => {
     fetch(URL)

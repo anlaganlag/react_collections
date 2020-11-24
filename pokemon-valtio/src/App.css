@@ -32,6 +32,7 @@ table td {
   border: 1px solid gray;
 }
 
+
 table thead th {
   color: white;
   background-color: #38f;
@@ -58,5 +59,9 @@ table tbody tr:nth-of-type(even) {
 
 table tbody tr td {
   border-bottom: none;
+}
+
+.col1 {
+  width: 150%;
 }
 
