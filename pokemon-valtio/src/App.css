@@ -65,3 +65,7 @@ table tbody tr td {
   width: 150%;
 }
 
+.onlyInput {
+  margin-bottom: .5em;
+}
+

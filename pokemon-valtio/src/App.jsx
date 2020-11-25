@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { proxy, useProxy } from "valtio";
 
 import "./App.css";
@@ -32,6 +32,7 @@ const URL =
 const state = proxy({
   pokemon: [],
   filter: "",
+  type: "",
 });
 
 function FilterInput() {
@@ -39,9 +40,19 @@ function FilterInput() {
 
   const handleChange = (evt) => {
     state.filter = evt.target.value;
+    // state.type = evt.target.value;
   };
 
-  return <input value={snapshot.filter} onChange={handleChange} />;
+  return (
+    <>
+      <label>搜索神奇寶貝</label>
+      <input
+        className="onlyInput"
+        value={snapshot.filter}
+        onChange={handleChange}
+      />
+    </>
+  );
 }
 
 function PokemonTable() {
@@ -72,7 +83,8 @@ function PokemonTable() {
   // }, [])
   // setSnapshot(useProxy(state));
 
-  const snapshot = useProxy(state)
+  const snapshot = useProxy(state);
+  console.log(snapshot);
 
   return (
     <section className="table-box">
@@ -91,13 +103,22 @@ function PokemonTable() {
         <tbody>
           {snapshot.pokemon
             .filter((p) =>
-              p.name.chinese.toLowerCase().includes(snapshot.filter)
+              p.type
+                .map((i) => `${trans[i]}`)
+                .join("/")
+                .includes(snapshot.filter)
             )
             .map((p) => (
               <tr key={p.id}>
                 <td>{p.id}</td>
-                <td>{p.name.chinese}</td>
-                <td>{p.type.map((i) => `${trans[i]}`).join(", ")}</td>
+                <td>
+                  {p.name.chinese}
+                </td>
+                <td>
+                  {p.type
+                    .map((i) => `${trans[i].slice(0, trans[i].length - 1)}`)
+                    .join(", ")}
+                </td>
                 <td>{p.base.HP}</td>
                 <td>{p.base.Attack}</td>
                 <td>{p.base.Defense}</td>
