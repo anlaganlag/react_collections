@@ -45,7 +45,7 @@ function FilterInput() {
 
   return (
     <>
-      <label>搜索神奇寶貝</label>
+      <label>按照神奇寶貝品系搜素</label>
       <input
         className="onlyInput"
         value={snapshot.filter}
@@ -103,9 +103,9 @@ function PokemonTable() {
         <tbody>
           {snapshot.pokemon
             .filter((p) =>
-              p.type
+              ((p.type
                 .map((i) => `${trans[i]}`)
-                .join("/")
+                .join(""))+p.name.chinese)
                 .includes(snapshot.filter)
             )
             .map((p) => (
@@ -116,7 +116,7 @@ function PokemonTable() {
                 </td>
                 <td>
                   {p.type
-                    .map((i) => `${trans[i].slice(0, trans[i].length - 1)}`)
+                    .map((i) => `${trans[i]}`)
                     .join(", ")}
                 </td>
                 <td>{p.base.HP}</td>
