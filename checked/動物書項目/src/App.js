@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { lists } from "./list";
 import Grid from "./Grid";
 import { Image, Text } from "./Thumb.styles";
+import Pagination from "./pagination";
+
 
 
 export default function App() {
@@ -9,23 +11,31 @@ export default function App() {
   const [perPage, setPerPage] = useState(60);
   //随机展示页码,总项目/每页的ceil即总页数..再根据总页数随机
   const [page, setPage] = useState(Math.ceil(Math.random() * Math.ceil(lists.length/perPage)));
-  const [curList, setCurList] = useState(
-    lists.slice(0,perPage)
-  );
+  const [searchQuery, setQuery] = useState("");
+
+  // const [curList, setCurList] = useState(
+    // lists.slice(0,perPage)
+  // );
+
+  const filterList = lists.filter((book) =>
+  book.title.toLowerCase().includes(searchQuery.toLowerCase())
+);
 
   function handleSubmit(e) {
     e.preventDefault();
-    setCurList(
-      lists.slice(perPage * (parseInt(page) - 1), parseInt(page) * perPage)
-    );
-    console.log("当前列表", curList, "提交");
+    // setCurList(
+    //   lists.slice(perPage * (parseInt(page) - 1), parseInt(page) * perPage)
+    // );
+    // console.log("当前列表", curList, "提交");
+    setPage(e.target.value)
   }
   function handleInput(e) {
     if (isNaN(e.target.value)) return;
-    setPage(e.target.value);
+    setPage(parseInt(e.target.value));
+    
   }
   useEffect(() => {
-    console.log("cur", page);
+    console.log("cur", page,typeof page);
   }, [page]);
 
   return (
@@ -37,8 +47,13 @@ export default function App() {
           onChange={handleInput}
           placeholder="输入页码"
         />
-        <button onClick={()=>setPage(parseInt(page)+1)}>下一页</button>
       </form>
+      <Pagination
+        currentPage={page}
+        setCurrentPage={setPage}  
+        pageSize={perPage}
+        totalData={filterList.length}
+      />
 
       <Grid
         header={
@@ -47,7 +62,7 @@ export default function App() {
             : "动物书封面"
         }
       >
-        {curList.map((item, idx) => (
+        {filterList.slice((page-1)*perPage,page*perPage).map((item, idx) => (
           <div className="Thumb">
             <a href={item.link} target="_blank">
             <Text>
@@ -64,6 +79,12 @@ export default function App() {
           </div>
         ))}
       </Grid>
+      <Pagination
+        currentPage={page}
+        setCurrentPage={setPage}  
+        pageSize={perPage}
+        totalData={filterList.length}
+      />
 {      page>0 &&
       <form onSubmit={handleSubmit}>
         <input

@@ -40,8 +40,9 @@ const App = () => {
 
         <h2>按照id排列</h2>
 
-        {items.map((pokemon) => (
+        {items.map((pokemon,idx) => (
           <span key={pokemon}>
+          
             <img
               src={
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
