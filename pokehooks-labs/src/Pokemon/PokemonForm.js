@@ -20,8 +20,8 @@ const PokemonForm = () => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="text" placeholder="pokemon name" onChange={handleNameOnChange} />
-      <input type="submit" value="Add" />
+      <input type="text" placeholder="寶貝名字" onChange={handleNameOnChange} />
+      <input type="submit" value="添加" />
     </form>
   );
 };

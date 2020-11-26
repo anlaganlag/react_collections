@@ -7,12 +7,12 @@ const Pokedex = () => {
 
   return (
     <div className="pokedex">
-      <h2>Pokedex</h2>
+      <h2>寶貝圖鑑</h2>
 
       <table>
         <tr>
-          <th>Pokemon</th>
-          <th>Release</th>
+          <th>寶貝</th>
+          <th>釋放</th>
         </tr>
         {listPokemons({
           pokemons: capturedPokemons,

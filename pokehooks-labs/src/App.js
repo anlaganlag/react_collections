@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import { PokemonProvider } from './Pokemon/PokemonContext';
 import PokemonsList from './Pokemon/PokemonsList';
@@ -6,6 +6,8 @@ import Pokedex from './Pokemon/Pokedex';
 import PokemonForm from './Pokemon/PokemonForm';
 
 const App = () => (
+  // const [items, setItems] = useState([]);
+
   <PokemonProvider>
     <div className="main">
       <PokemonsList />
