@@ -19,14 +19,14 @@ export default function App() {
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    // setCurList(
-    //   lists.slice(perPage * (parseInt(page) - 1), parseInt(page) * perPage)
-    // );
-    // console.log("当前列表", curList, "提交");
-    setQuery(e.target.value);
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   // setCurList(
+  //   //   lists.slice(perPage * (parseInt(page) - 1), parseInt(page) * perPage)
+  //   // );
+  //   // console.log("当前列表", curList, "提交");
+  //   setQuery(e.target.value);
+  // }
   function handleInput(e) {
     setQuery(e.target.value);
   }
@@ -36,7 +36,7 @@ export default function App() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form >
         <input
           type={Number}
           value={searchQuery}
@@ -81,7 +81,7 @@ export default function App() {
         totalData={filterList.length}
       />
       {filterList > 0 && (
-        <form onSubmit={handleSubmit} >
+        <form  >
           <input
             type={Number}
             value={page}

@@ -21,7 +21,7 @@ const PokemonForm = () => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="number" placeholder="輸入頁碼" onChange={handleNameOnChange} />
+      <input type="number" placeholder="輸入頁碼" value = {page} onChange={handleNameOnChange} />
       <input type="submit" value="添加" />
     </form>
   );
