@@ -6,7 +6,7 @@ const PokemonContext = createContext();
 
 const PokemonProvider = ({ children }) => {
   const [{ pokemons, capturedPokemons }, dispatch] = usePokemonReducer();
-  const [page, setPage] = useState(2)
+  const [page, setPage] = useState(10)
 
   const capture = (pokemon) => () => dispatch({ type: CAPTURE, pokemon });
   const release = (pokemon) => () => dispatch({ type: RELEASE, pokemon });

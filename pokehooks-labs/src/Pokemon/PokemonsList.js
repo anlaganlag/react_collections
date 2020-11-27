@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { listPokemons } from "./listPokemons";
+import PokemonName from "./PokemonName";
 
 // const url = "https://pokeapi.co/api/v2/pokemon";
 const url1 = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20";
@@ -28,11 +29,13 @@ const PokemonsList = () => {
       // setItems(randomList)
       addPokemons(oneTo20.map((i) => data.results[i]));
       console.log(pokemons,"yyyyyyy");
+      setItems(f1(page))
 
     };
 
     fetchPokemons();
-  }, []);
+  }, [page]);
+  console.log(pokemons,"ppppppppppppppppppppp");
 
   return (
     <div className="pokemons-list">

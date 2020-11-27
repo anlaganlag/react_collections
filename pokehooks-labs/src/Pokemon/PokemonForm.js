@@ -4,8 +4,7 @@ import { generateID } from './generateID';
 
 const PokemonForm = () => {
   const [pokemonName, setPokemonName] = useState();
-  const [page, setPage] = useState(1);
-  const { addPokemon } = useContext(PokemonContext);
+  const { addPokemon,page,setPage } = useContext(PokemonContext);
 
   const handleNameOnChange = (e) => {
     setPage(e.target.value);
