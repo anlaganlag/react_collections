@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 import { PokemonProvider } from './Pokemon/PokemonContext';
 import PokemonsList from './Pokemon/PokemonsList';

@@ -4,10 +4,11 @@ import { generateID } from './generateID';
 
 const PokemonForm = () => {
   const [pokemonName, setPokemonName] = useState();
+  const [page, setPage] = useState(1);
   const { addPokemon } = useContext(PokemonContext);
 
   const handleNameOnChange = (e) => {
-    setPokemonName(e.target.value);
+    setPage(e.target.value);
   }
 
   const handleFormSubmit = (e) => {
@@ -20,7 +21,7 @@ const PokemonForm = () => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="text" placeholder="寶貝名字" onChange={handleNameOnChange} />
+      <input type="number" placeholder="輸入頁碼" onChange={handleNameOnChange} />
       <input type="submit" value="添加" />
     </form>
   );
