@@ -7,6 +7,7 @@ const PokemonForm = () => {
   const { addPokemon,page,setPage } = useContext(PokemonContext);
 
   const handleNameOnChange = (e) => {
+    if (e.target.value <=0 || e.target.value >55) return
     setPage(e.target.value);
   }
 
@@ -20,8 +21,8 @@ const PokemonForm = () => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="number" placeholder="輸入頁碼" value = {page} onChange={handleNameOnChange} />
-      <input type="submit" value="添加" />
+      <input type="number" placeholder="輸入頁碼" value = {page} onChange={handleNameOnChange} min="1" max="55"/>
+      <input type="submit" value="頁數" />
     </form>
   );
 };

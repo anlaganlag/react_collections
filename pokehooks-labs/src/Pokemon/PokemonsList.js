@@ -46,7 +46,7 @@ const PokemonsList = () => {
               pokemon.url.split("/")[6] +
               ".png"
             }
-            alt="无"
+            alt="无图"
             className="sprite"
             />
             <span>{pokemon.url.split("/")[6] +":"+pokemon.name}</span>

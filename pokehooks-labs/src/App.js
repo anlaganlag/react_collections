@@ -9,13 +9,14 @@ const App = () => (
   // const [items, setItems] = useState([]);
 
   <PokemonProvider>
+        <div className='form-wrapper'>
+      <PokemonForm />
+    </div>
     <div className="main">
       <PokemonsList />
       <Pokedex />
     </div>
-    <div className='form-wrapper'>
-      <PokemonForm />
-    </div>
+
   </PokemonProvider>
 );
 
