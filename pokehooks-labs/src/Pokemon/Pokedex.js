@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { PokemonContext } from './PokemonContext';
 import { listPokemons } from './listPokemons';
+import Grid from "./Grid";
+
 
 const Pokedex = () => {
   const { capturedPokemons, release } = useContext(PokemonContext);
@@ -9,6 +11,7 @@ const Pokedex = () => {
     <div className="pokedex">
 
 
+<Grid >
 
               {capturedPokemons.map((pokemon) => (
         <span key={pokemon}>
@@ -22,10 +25,13 @@ const Pokedex = () => {
             alt="无"
             className="sprite"
           />
+                      <span>{pokemon.url.split("/")[6] +":"+pokemon.name}</span>
+
 
         </span>
       ))}
-      <h2>已捕..</h2>
+      </Grid>
+     {capturedPokemons.length > 0 && <h2>已捕寶貝</h2>}
 
 {listPokemons({
           pokemons: capturedPokemons,

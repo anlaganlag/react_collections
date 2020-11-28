@@ -30,8 +30,16 @@ body {
 
 .list-num-right{ 
   
-  text-align: right;
   border-radius: .4em;
+  text-transform:capitalize;
+  color: green;
+
+}
+
+.list-num-left{ 
+  
+  text-align: right;
+  border-radius: 40%;
   text-transform:capitalize;
   color: orange;
 
