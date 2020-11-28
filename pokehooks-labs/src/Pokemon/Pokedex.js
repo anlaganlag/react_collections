@@ -11,7 +11,7 @@ const Pokedex = () => {
     <div className="pokedex">
       <Grid>
         {capturedPokemons.map((pokemon) => (
-          <div className="image-container" key={pokemon}>
+          <div className="image-container" key={pokemon} onClick={release(pokemon)}>
             <img
               src={
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
@@ -21,11 +21,11 @@ const Pokedex = () => {
               alt=""
               className="sprite"
             />
-            {/* <span>{pokemon.url.split("/")[6] + ":" + Data[pokemon.url.split("/")[6]].name.chinese}</span> */}
+            {/* <span>{pokemon.url.split("/")[6] + ":" + Data[pokemon.url.split("/")[6]-1].name.chinese}</span> */}
             <span>
               {" "}
-              {(Data[pokemon.url.split("/")[6]] &&
-                Data[pokemon.url.split("/")[6]].name.chinese) ||
+              {(Data[pokemon.url.split("/")[6]-1] &&
+                Data[pokemon.url.split("/")[6]-1].name.chinese) ||
                 (pokemon && pokemon.name)}
             </span>
           </div>

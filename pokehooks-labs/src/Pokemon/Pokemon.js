@@ -14,8 +14,8 @@ export const Pokemon = ({ pokemon, onClick, buttonLabel }) =>
         {pokemon.url.split("/")[6]}{" "}
         <span>
           {" "}
-          {(Data[pokemon.url.split("/")[6]] &&
-            Data[pokemon.url.split("/")[6]].name.chinese) ||
+          {(Data[pokemon.url.split("/")[6]-1] &&
+            Data[pokemon.url.split("/")[6]-1].name.chinese) ||
             (pokemon && pokemon.name)}
         </span>
       </button>

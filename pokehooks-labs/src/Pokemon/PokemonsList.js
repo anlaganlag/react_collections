@@ -37,9 +37,9 @@ const PokemonsList = () => {
         onClick: capture,
         buttonLabel: " ",
       })}
-      <Grid header={pokemons.length > 0 && "嘗試捕獲..."}>
+      <Grid   header={pokemons.length > 0 && "嘗試捕獲..."}>
         {pokemons.map((pokemon) => (
-          <div className="image-container">
+          <div className="image-container" onClick={capture(pokemon)}>
             {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
 
             <img
@@ -50,9 +50,9 @@ const PokemonsList = () => {
               className="sprite"
             />
             {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
-            <div className="image-name">
-              {(Data[pokemon.url.split("/")[6]] &&
-                Data[pokemon.url.split("/")[6]].name.chinese) ||
+            <div className="image-name" >
+              {(Data[pokemon.url.split("/")[6]-1] &&
+                Data[pokemon.url.split("/")[6]-1].name.chinese) ||
                 (pokemon && pokemon.name)}
             </div>
           </div>
