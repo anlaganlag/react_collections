@@ -6,7 +6,7 @@ const PokemonContext = createContext();
 
 const PokemonProvider = ({ children }) => {
   const [{ pokemons, capturedPokemons }, dispatch] = usePokemonReducer();
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const url = `https://pokeapi.co/api/v2/pokemon?offset=${
     (page - 1) * 20
   }&limit=20`;

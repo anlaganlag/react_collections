@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect,useRef } from 'react';
 import { PokemonContext } from './PokemonContext';
 import { generateID } from './generateID';
 
 const PokemonForm = () => {
   const [pokemonName, setPokemonName] = useState();
   const { addPokemon,page,setPage } = useContext(PokemonContext);
+  const inputRef = useRef()
 
   const handleNameOnChange = (e) => {
     if (e.target.value <=0 || e.target.value >56) return
@@ -18,10 +19,11 @@ const PokemonForm = () => {
       name: pokemonName
     });
   };
+  useEffect(()=>inputRef.current.focus())
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="number" placeholder="輸入頁碼" value = {page} onChange={handleNameOnChange} min="1" max="55"/>
+      <input type="number" placeholder="輸入頁碼" value = {page} onChange={handleNameOnChange} min="1" max="55" ref={inputRef}/>
       <input type="submit" value="頁數" />
     </form>
   );

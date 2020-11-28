@@ -39,18 +39,26 @@ const PokemonsList = () => {
       <Grid header={pokemons.length > 0 && "嘗試捕獲..."}>
         {pokemons.map((pokemon) => (
 
-          <div>
+          <div className="image-container">
+                        <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div>
+            
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?pokemon.url.split('/')[6]:1000}.png`}
               
               alt=""
               className="sprite"
             />
-            <span>{pokemon&&(pokemon.url.split('/')[6]+":"+pokemon.name)}</span>
+            {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
+            <div className="image-name">{pokemon.name}</div>
             
           </div>
         ))}
       </Grid>
+      {/* {listPokemons({
+        pokemons,
+        onClick: capture,
+        buttonLabel: " ",
+      })} */}
     </div>
   );
 };
