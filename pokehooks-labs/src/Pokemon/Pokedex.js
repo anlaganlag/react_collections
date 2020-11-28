@@ -7,7 +7,7 @@ const Pokedex = () => {
 
   return (
     <div className="pokedex">
-      <h2>寶貝圖鑑</h2>
+      <h2>已捕获</h2>
 
       <table>
         <tr>
@@ -17,8 +17,22 @@ const Pokedex = () => {
         {listPokemons({
           pokemons: capturedPokemons,
           onClick: release,
-          buttonLabel: '-'
+          buttonLabel: '😺'
         })}
+              {capturedPokemons.map((pokemon) => (
+        <span key={pokemon}>
+          <img
+            src={
+              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+              (pokemon.url.split("/")[6] ) +
+              ".png"
+            }
+            alt="无"
+            className="sprite"
+          />
+          <span>{pokemon.url.split("/")[6] }</span>
+        </span>
+      ))}
       </table>
     </div>
   )

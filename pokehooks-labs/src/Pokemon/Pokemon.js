@@ -1,15 +1,15 @@
 import React from "react";
 
 export const Pokemon = ({ pokemon, onClick, buttonLabel }) => (
-  <tr key={pokemon.name}>
+  pokemon &&<span key={pokemon.name}>
     <td>
-     {pokemon.url&& <span>{"id:"+pokemon.url.split("/")[6]+" "+pokemon.name}</span>}
+     {pokemon.url&& <span>{buttonLabel+pokemon.name}</span>}
     </td>
     <td>
-      <button onClick={onClick(pokemon)}>{buttonLabel}</button>
+      <button onClick={onClick(pokemon)}>{pokemon.url.split("/")[6]}</button>
     </td>
 
-  </tr>
+  </span>
 );
 
 export default Pokemon;

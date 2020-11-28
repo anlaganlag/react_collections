@@ -1,22 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { listPokemons } from "./listPokemons";
-import PokemonName from "./PokemonName";
 
 // const url = "https://pokeapi.co/api/v2/pokemon";
-const url1 = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20";
-const url2 = "https://pokeapi.co/api/v2/pokemon?offset=40&limit=20";
-const url3 = "https://pokeapi.co/api/v2/pokemon?offset=60&limit=20";
 
 const PokemonsList = () => {
-  const { pokemons, capture, addPokemons,page,setPage } = useContext(PokemonContext);
-  const f1 = (a) => [...Array(a * 20).keys()].slice(a * 20 - 20);
-  const oneTo20 = f1(1)
+  const { pokemons, capture, addPokemons,page,f1,url } = useContext(PokemonContext);
 
-  const [items, setItems] = useState(f1(page));
-  const url = `https://pokeapi.co/api/v2/pokemon?offset=${
-    (page - 1) * 20
-  }&limit=20`;
+  let items = f1(page)
 
   useEffect(() => {
     const fetchPokemons = async () => {
@@ -25,35 +16,25 @@ const PokemonsList = () => {
       // const randomNum =  () =>   Math.floor(Math.random() * (data.results.length))
       // const randomList =   [...Array(5)].map(randomNum)
       // addPokemons(data.results.slice(randomNum,randomNum+3));
-      console.log(data,"xxxxxxxxxxxxxx");
       // setItems(randomList)
-      addPokemons(oneTo20.map((i) => data.results[i]));
-      console.log(pokemons,"yyyyyyy");
-      setItems(f1(page))
+      addPokemons(f1(1).map((i) => data.results[i]));
+      items = f1(page)
 
     };
 
     fetchPokemons();
   }, [page]);
-  console.log(pokemons,"ppppppppppppppppppppp");
 
   return (
     <div className="pokemons-list">
-      <h2>神奇寶貝列表</h2>
+      <h2>野生的宝贝</h2>
 
-      <table>
-        <tr>
-          <th>寶貝</th>
-          <th>捕獲</th>
-          {useState}
-        </tr>
         {listPokemons({
           pokemons,
           onClick: capture,
-          buttonLabel: "+",
+          buttonLabel: "🦮 ",
         })}
-      </table>
-      <h1>圖片</h1>
+      <h1>嘗試捕獲...</h1>
       {items.map((pokemon) => (
         <span key={pokemon}>
           <img
@@ -65,7 +46,7 @@ const PokemonsList = () => {
             alt="无"
             className="sprite"
           />
-          <span>id:{pokemon+1 }</span>
+          <span>{pokemon+1 }</span>
         </span>
       ))}
     </div>
