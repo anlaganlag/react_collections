@@ -31,6 +31,8 @@ const PokemonsList = () => {
   return (
     <div className="pokemons-list">
       <h2>(含ID)野生的宝贝</h2>
+      <h5>按r随机展示一页</h5>
+      <h6>vim控制页数</h6>
 
       {listPokemons({
         pokemons,
@@ -51,9 +53,9 @@ const PokemonsList = () => {
             />
             {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
             <div className="image-name" >
-              {(Data[pokemon.url.split("/")[6]-1] &&
+              {pokemon&&(Data[pokemon.url.split("/")[6]-1] &&
                 Data[pokemon.url.split("/")[6]-1].name.chinese) ||
-                (pokemon && pokemon.name)}
+                (  pokemon.name)}
             </div>
           </div>
         ))}

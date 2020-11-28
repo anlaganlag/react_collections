@@ -16,7 +16,7 @@ const PokemonProvider = ({ children }) => {
   const addPokemon = (pokemon) => dispatch({ type: ADD_POKEMON, pokemon });
   const addPokemons = (pokemons) => dispatch({ type: ADD_POKEMONS, pokemons });
 
-  const f1 = (a) => [...Array(a * 20).keys()].slice(a * 20 - 20);
+  const f1 = (a) => a >0?[...Array(a * 20).keys()].slice(a * 20 - 20):[];
   const oneTo20 = f1(1);
 
   const providerValue = {
