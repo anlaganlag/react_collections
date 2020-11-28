@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { listPokemons } from "./listPokemons";
+import Grid from "./Grid";
 
 // const url = "https://pokeapi.co/api/v2/pokemon";
 
 const PokemonsList = () => {
-  const { pokemons, capture, addPokemons,page,f1,url } = useContext(PokemonContext);
+  const { pokemons, capture, addPokemons, page, f1, url } = useContext(
+    PokemonContext
+  );
 
-  let items = f1(page)
+  let items = f1(page);
 
   useEffect(() => {
     const fetchPokemons = async () => {
@@ -18,8 +21,7 @@ const PokemonsList = () => {
       // addPokemons(data.results.slice(randomNum,randomNum+3));
       // setItems(randomList)
       addPokemons(f1(1).map((i) => data.results[i]));
-      items = f1(page)
-
+      items = f1(page);
     };
 
     fetchPokemons();
@@ -29,26 +31,29 @@ const PokemonsList = () => {
     <div className="pokemons-list">
       <h2>野生的宝贝</h2>
 
-        {listPokemons({
-          pokemons,
-          onClick: capture,
-          buttonLabel: "🦮 ",
-        })}
-      <h1>嘗試捕獲...</h1>
-      {items.map((pokemon) => (
-        <span key={pokemon}>
+      {listPokemons({
+        pokemons,
+        onClick: capture,
+        buttonLabel: " ",
+      })}
+      <Grid header={pokemons.length > 0 && "嘗試捕獲..."}>
+        {pokemons.map((pokemon) => (
+          <div>
+
           <img
             src={
               "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-              (pokemon+1 ) +
+              pokemon.url.split("/")[6] +
               ".png"
             }
             alt="无"
             className="sprite"
-          />
-          <span>{pokemon+1 }</span>
-        </span>
-      ))}
+            />
+            <span>{pokemon.url.split("/")[6] +":"+pokemon.name}</span>
+          </div>
+
+        ))}
+      </Grid>
     </div>
   );
 };

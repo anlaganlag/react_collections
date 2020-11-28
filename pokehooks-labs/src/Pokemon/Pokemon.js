@@ -1,13 +1,9 @@
 import React from "react";
+import "../index.css"
 
 export const Pokemon = ({ pokemon, onClick, buttonLabel }) => (
   pokemon &&<span key={pokemon.name}>
-    <td>
-     {pokemon.url&& <span>{buttonLabel+pokemon.name}</span>}
-    </td>
-    <td>
-      <button onClick={onClick(pokemon)}>{pokemon.url.split("/")[6]}</button>
-    </td>
+      <button className="list-num-right" onClick={onClick(pokemon)}>{pokemon.url.split("/")[6]} <span>{pokemon.name}</span></button>
 
   </span>
 );
