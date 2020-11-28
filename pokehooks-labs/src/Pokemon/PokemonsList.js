@@ -20,7 +20,7 @@ const PokemonsList = () => {
       // const randomList =   [...Array(5)].map(randomNum)
       // addPokemons(data.results.slice(randomNum,randomNum+3));
       // setItems(randomList)
-      addPokemons(f1(1).map((i) => data.results[i]));
+      addPokemons(f1(1).map((i) => data.results[i]||""));
       items = f1(page);
     };
 
@@ -38,20 +38,17 @@ const PokemonsList = () => {
       })}
       <Grid header={pokemons.length > 0 && "嘗試捕獲..."}>
         {pokemons.map((pokemon) => (
+
           <div>
-
-          <img
-            src={
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-              pokemon.url.split("/")[6] +
-              ".png"
-            }
-            alt="无图"
-            className="sprite"
+            <img
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?pokemon.url.split('/')[6]:1000}.png`}
+              
+              alt=""
+              className="sprite"
             />
-            <span>{pokemon.url.split("/")[6] +":"+pokemon.name}</span>
+            <span>{pokemon&&(pokemon.url.split('/')[6]+":"+pokemon.name)}</span>
+            
           </div>
-
         ))}
       </Grid>
     </div>

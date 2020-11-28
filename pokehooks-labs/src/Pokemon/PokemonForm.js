@@ -7,7 +7,7 @@ const PokemonForm = () => {
   const { addPokemon,page,setPage } = useContext(PokemonContext);
 
   const handleNameOnChange = (e) => {
-    if (e.target.value <=0 || e.target.value >55) return
+    if (e.target.value <=0 || e.target.value >56) return
     setPage(e.target.value);
   }
 
