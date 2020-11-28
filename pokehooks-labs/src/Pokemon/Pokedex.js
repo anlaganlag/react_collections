@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { listPokemons } from "./listPokemons";
 import Grid from "./Grid";
+import { Data } from "./Data";
 
 const Pokedex = () => {
   const { capturedPokemons, release } = useContext(PokemonContext);
@@ -10,7 +11,7 @@ const Pokedex = () => {
     <div className="pokedex">
       <Grid>
         {capturedPokemons.map((pokemon) => (
-          <span key={pokemon}>
+          <div className="image-container" key={pokemon}>
             <img
               src={
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
@@ -20,11 +21,17 @@ const Pokedex = () => {
               alt=""
               className="sprite"
             />
-            <span>{pokemon.url.split("/")[6] + ":" + pokemon.name}</span>
-          </span>
+            {/* <span>{pokemon.url.split("/")[6] + ":" + Data[pokemon.url.split("/")[6]].name.chinese}</span> */}
+            <span>
+              {" "}
+              {(Data[pokemon.url.split("/")[6]] &&
+                Data[pokemon.url.split("/")[6]].name.chinese) ||
+                (pokemon && pokemon.name)}
+            </span>
+          </div>
         ))}
       </Grid>
-      {capturedPokemons.length > 0 && <h2>已捕寶貝</h2>}
+      {capturedPokemons.length > 0 && <h2>已捕获寶貝:</h2>}
 
       {listPokemons({
         pokemons: capturedPokemons,

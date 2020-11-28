@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css";
+import { Data } from "./Data";
 
 export const Pokemon = ({ pokemon, onClick, buttonLabel }) =>
   pokemon && (
@@ -10,7 +11,13 @@ export const Pokemon = ({ pokemon, onClick, buttonLabel }) =>
         }
         onClick={onClick(pokemon)}
       >
-        {pokemon.url.split("/")[6]} <span>{pokemon.name}</span>
+        {pokemon.url.split("/")[6]}{" "}
+        <span>
+          {" "}
+          {(Data[pokemon.url.split("/")[6]] &&
+            Data[pokemon.url.split("/")[6]].name.chinese) ||
+            (pokemon && pokemon.name)}
+        </span>
       </button>
     </span>
   );

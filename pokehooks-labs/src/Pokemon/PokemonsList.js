@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { listPokemons } from "./listPokemons";
 import Grid from "./Grid";
+import { Data } from "./Data";
 
 // const url = "https://pokeapi.co/api/v2/pokemon";
 
@@ -20,7 +21,7 @@ const PokemonsList = () => {
       // const randomList =   [...Array(5)].map(randomNum)
       // addPokemons(data.results.slice(randomNum,randomNum+3));
       // setItems(randomList)
-      addPokemons(f1(1).map((i) => data.results[i]||""));
+      addPokemons(f1(1).map((i) => data.results[i] || ""));
       items = f1(page);
     };
 
@@ -29,7 +30,7 @@ const PokemonsList = () => {
 
   return (
     <div className="pokemons-list">
-      <h2>野生的宝贝</h2>
+      <h2>(含ID)野生的宝贝</h2>
 
       {listPokemons({
         pokemons,
@@ -38,19 +39,22 @@ const PokemonsList = () => {
       })}
       <Grid header={pokemons.length > 0 && "嘗試捕獲..."}>
         {pokemons.map((pokemon) => (
-
           <div className="image-container">
-                        <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div>
-            
+            {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
+
             <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?pokemon.url.split('/')[6]:1000}.png`}
-              
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                pokemon ? pokemon.url.split("/")[6] : 1000
+              }.png`}
               alt=""
               className="sprite"
             />
             {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
-            <div className="image-name">{pokemon.name}</div>
-            
+            <div className="image-name">
+              {(Data[pokemon.url.split("/")[6]] &&
+                Data[pokemon.url.split("/")[6]].name.chinese) ||
+                (pokemon && pokemon.name)}
+            </div>
           </div>
         ))}
       </Grid>
