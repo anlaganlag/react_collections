@@ -1,7 +1,12 @@
 import { useReducer } from "react";
-import { CAPTURE, RELEASE, ADD_POKEMON, ADD_POKEMONS } from "./actions";
+import {
+  CAPTURE,
+  RELEASE,
+  ADD_POKEMON,
+  ADD_POKEMONS,
+  POPULATE_LS_POKEMONS,
+} from "./actions";
 //捕獲的釋放一個,等價於除了釋放的都保留.
-
 
 //釋放就是從右邊移動到左邊..
 //被選中要釋放的
@@ -29,6 +34,10 @@ const addPokemons = (pokemons, state) => ({
   capturedPokemons: state.capturedPokemons,
 });
 
+const populateLSPokemons = (pokemons, state) => ({
+  ...state,
+  capturedPokemons: pokemons
+});
 const pokemonReducer = (state, action) => {
   switch (action.type) {
     case CAPTURE:
@@ -39,6 +48,8 @@ const pokemonReducer = (state, action) => {
       return addPokemon(action.pokemon, state);
     case ADD_POKEMONS:
       return addPokemons(action.pokemons, state);
+    case POPULATE_LS_POKEMONS:
+      return populateLSPokemons(action.pokemons, state);
     default:
       return state;
   }
