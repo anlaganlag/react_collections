@@ -38,6 +38,11 @@ const populateLSPokemons = (pokemons, state) => ({
   ...state,
   capturedPokemons: pokemons
 });
+
+const sordList = (pokemons, state) => ({
+  ...state,
+  capturedPokemons: pokemons
+});
 const pokemonReducer = (state, action) => {
   switch (action.type) {
     case CAPTURE:

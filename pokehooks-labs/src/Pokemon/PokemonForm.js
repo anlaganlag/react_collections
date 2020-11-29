@@ -28,7 +28,7 @@ const PokemonForm = () => {
     });
   };
 
-  useEffect(() => inputRef.current.focus());
+  // useEffect(() => inputRef.current.focus());
 
   return (
     <>
