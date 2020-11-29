@@ -21,8 +21,7 @@ const PokemonsList = () => {
       // const randomList =   [...Array(5)].map(randomNum)
       // addPokemons(data.results.slice(randomNum,randomNum+3));
       // setItems(randomList)
-      addPokemons(f1(1).map((i) =>({ ...data.results[i],"id":data.results[i].url.split("/")[6]} )|| ""));
-      items = f1(page);
+      addPokemons(f1(1).map((i) =>({ ...data.results[i],"id":data.results[i].url.split("/")[6]} )|| "")); items = f1(page);
     };
 
     fetchPokemons();
