@@ -26,7 +26,7 @@ const PokemonsList = () => {
 
     fetchPokemons();
   }, [page]);
-
+  console.log(pokemons,"xxxxx");
   return (
     <div className="pokemons-list">
       <h2>(含ID)野生的宝贝</h2>
@@ -42,18 +42,20 @@ const PokemonsList = () => {
         {pokemons.map((pokemon) => (
           <div className="image-container" onClick={capture(pokemon)}>
             {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
+            <div>{pokemon.id}</div>
+
 
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                pokemon ? pokemon.url.split("/")[6] : 1000
+                pokemon ? pokemon.id : 1000
               }.png`}
               alt=""
               className="sprite"
             />
             {/* <div className="image-idx">{pokemon&&(pokemon.url.split('/')[6])}</div> */}
             <div className="image-name" >
-              {pokemon&&(Data[pokemon.url.split("/")[6]-1] &&
-                Data[pokemon.url.split("/")[6]-1].name.chinese) ||
+              {pokemon.id+pokemon&&(Data[pokemon.id-1] &&
+                Data[pokemon.id-1].name.chinese) ||
                 (  pokemon.name)}
             </div>
           </div>

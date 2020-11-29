@@ -8,12 +8,12 @@ import { Data } from "./Data";
 const Pokedex = () => {
   const { capturedPokemons, release } = useContext(PokemonContext);
 
+  console.log(capturedPokemons,"xxxxx");
   
-
   return (
     <div className="pokedex">
       <Grid>
-        {capturedPokemons.map((pokemon) => (
+        {capturedPokemons.sort( (a,b)=>a.id-b.id).map((pokemon) => (
           <div
             className="image-container"
             key={pokemon}
@@ -22,19 +22,22 @@ const Pokedex = () => {
             <img
               src={
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-                pokemon.url.split("/")[6] +
+                pokemon.id +
                 ".png"
               }
               alt=""
               className="sprite"
             />
             {/* <span>{pokemon.url.split("/")[6] + ":" + Data[pokemon.url.split("/")[6]-1].name.chinese}</span> */}
+
             <span>
               {" "}
-              {(Data[pokemon.url.split("/")[6] - 1] &&
-                Data[pokemon.url.split("/")[6] - 1].name.chinese) ||
+              {(Data[pokemon.id - 1] &&
+                Data[pokemon.id - 1].name.chinese) ||
                 (pokemon && pokemon.name)}
             </span>
+            <div>{pokemon.id}</div>
+
           </div>
         ))}
       </Grid>
