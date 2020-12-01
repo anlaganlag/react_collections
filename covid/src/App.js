@@ -24,7 +24,7 @@ const mapZoom =2
 const App = () => {
   //全球和所有的国家代码
   const [country, setInputCountry] = useState("worldwide");
-  //整体信息
+  //全球狀況即整体信息
   const [countryInfo, setCountryInfo] = useState({});
   
   const [countries, setCountries] = useState([]);
@@ -55,7 +55,7 @@ const App = () => {
             value: country.countryInfo.iso2,
           }));
           let sortedData = sortData(data);
-          //简易版的数据..
+          //簡單的國家信息
           setCountries(countries);
           //获取的数据直接作为地图的数据..
           setMapCountries(data);
@@ -97,7 +97,7 @@ const App = () => {
               {new Date().toLocaleDateString()} 
               <span>
               <a href='https://disease.sh/'>
-                数据来源:disease.sh
+                disease.sh
               </a>
               </span>
           </h1>
