@@ -35,7 +35,7 @@ export default function App() {
     // };
 
     setTest(rollNum);
-  }, [roll]);
+  }, [rollNum]);
 
   return (
     <>
