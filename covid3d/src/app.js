@@ -59,7 +59,7 @@ function init() {
     })
     .onPolygonHover((hoverD) =>
       world
-        .polygonAltitude((d) => (d === hoverD ? 0.12 : 0.06))
+        .polygonAltitude((d) => (d === hoverD ? .5 : 0.06))
         .polygonCapColor((d) =>
           d === hoverD ? 'steelblue' : colorScale(getVal(d))
         )
@@ -104,7 +104,7 @@ async function getCases() {
 
   // world.polygonsData(countriesWithCovid);
   document.querySelector('.title-desc').innerHTML =
-    'Hover on a country or territory to see cases, deaths, and recoveries.';
+    '懸停地圖,查看新冠數據';
 
   dates = Object.keys(countries.China);
 
@@ -146,7 +146,7 @@ function updateCounters() {
   deathsEl.innerHTML = numberWithCommas(totalDeaths);
   recoveriesEl.innerHTML = numberWithCommas(totalRecoveries);
 
-  updatedEl.innerHTML = `(as of ${formatDate(dates[slider.value])})`;
+  updatedEl.innerHTML = `(截止${formatDate(dates[slider.value])})`;
 }
 
 function updatePolygonsData() {
@@ -185,17 +185,17 @@ async function updatePointOfView() {
       1000
     );
   } catch (e) {
-    console.log('Unable to set point of view.');
+    console.log('無法設置視角');
   }
 }
 
 let interval;
 
 playButton.addEventListener('click', () => {
-  if (playButton.innerText === 'Play') {
-    playButton.innerText = 'Pause';
+  if (playButton.innerText === '播放') {
+    playButton.innerText = '暫停';
   } else {
-    playButton.innerText = 'Play';
+    playButton.innerText = '播放';
     clearInterval(interval);
     return;
   }
@@ -213,7 +213,7 @@ playButton.addEventListener('click', () => {
     updateCounters();
     updatePolygonsData();
     if (+slider.value === dates.length - 1) {
-      playButton.innerHTML = 'Play';
+      playButton.innerHTML = '播放';
       clearInterval(interval);
     }
   }, 200);

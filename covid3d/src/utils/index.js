@@ -29,7 +29,7 @@ export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-export function formatDate(date, format = 'MMMM D, YYYY') {
+export function formatDate(date, format = 'YYYY年MM月D日') {
   return dayjs(date).format(format);
 }
 
