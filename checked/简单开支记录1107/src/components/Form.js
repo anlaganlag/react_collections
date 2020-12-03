@@ -12,8 +12,9 @@ import { v4 as uuid } from "uuid";
 import { useCTX } from "../GlobalState";
 
 export default function Form() {
-  const [_, dispatch] = useCTX()
+  const [_s,dispatch,totalTime,setTotalTime] = useCTX()
   const [name, setName] = useState({
+    input:"",
     d : new Date(),
     date:new Date().toLocaleString().split(" ")[0]
   });
@@ -26,17 +27,22 @@ export default function Form() {
     setAmount(event.target.value);
   };
 
+  const handleWeek = (event) => {
+    setName({...name,input:event.target.value});
+  };
+
   const handleSubmitForm = (event) => {
     event.preventDefault();
     if (+amount > 0) {
       dispatch({
         type: "ADD_EXPENSE",
-        payload: { id: uuid(), d:new Date(), date:new Date().toLocaleString().split(" ")[0],amount},
+        payload: { id: uuid(), d:new Date(), date:name.input || new Date().toLocaleString().split(" ")[0],amount},
       });
 
       // clean input fields
       setName("");
-      setAmount("");
+      setAmount("10");
+      setTotalTime(totalTime)
     } else {
       console.log("消费项目和金额不合法..");
     }
@@ -51,7 +57,8 @@ export default function Form() {
             name="name"
             id="expenseName"
             placeholder="12月"
-            value={name.date }
+            value={name.input || name.date }
+            onChange = {handleWeek}
             // value={"DAY"+(name.d.getDay()>0?name.d.getDay():"5")+`(${name.date})` }
           />
         </Col>
