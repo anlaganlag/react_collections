@@ -11,3 +11,4 @@ export const weekDayMapper = {
 
 export const KEYTotalHrs = "simpleHrs";
 export const KEYTotalHis = "simpleHis";
+export const KEYCollectHis = "collectHrs";
