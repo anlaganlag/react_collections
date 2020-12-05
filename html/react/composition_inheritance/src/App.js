@@ -23,17 +23,17 @@ const App = () => (
   </>
 );
 
-// function App() {
-//   return (
-//     <>
-//       <h1>清单</h1>
-//       <ul>
-//         <Task children="Best P" />
-//         <Task children="React Dev" />
-//         <Task children="Coding Matching" />
-//         <Task>Coding everyNight <p>haha</p></Task>
-//       </ul>
-//     </>
-//   );
-// }
+function App() {
+  return (
+    <>
+      <h1>清单</h1>
+      <ul>
+        <Task children="Best P" />
+        <Task children="React Dev" />
+        <Task children="Coding Matching" />
+        <Task>Coding everyNight <p>haha</p></Task>
+      </ul>
+    </>
+  );
+}
 export default App;
