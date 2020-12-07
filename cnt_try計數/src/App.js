@@ -10,6 +10,7 @@ import "./App.css";
 export const App = (props) => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [history, setHistory] = useState([]);
+  // eslint-disable-next-line
   const [collectHistory, setCollectHistory] = useState([]);
   const [amount, setAmount] = useState(10);
 
@@ -24,7 +25,7 @@ export const App = (props) => {
   }
   // {date: "2020/12/4", weekDay: 5, amount: 2, 星期: " 星期五 "}
   function handleTodayHrs(amount) {
-    let newHis, newTotalHrs, newCollectHis;
+    let newHis, newTotalHrs;
 
     if (history[0] && history[0]["date"] === d.toLocaleDateString()) {
       newTotalHrs = +totalAmount - history[0]["amount"] + amount;
@@ -224,6 +225,7 @@ export const App = (props) => {
       </button>
 
       {history.length > 0 &&
+      // eslint-disable-next-line
         history.map(({ date, weekDay, amount }, idx) => {
           if (idx < 35) {
             return (

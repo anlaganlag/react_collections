@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import { useState,useEffect } from "react";
 
 function useKeyPress(targetKey) {
   //該按鍵有兩個狀態..默認false
@@ -14,7 +14,7 @@ function useKeyPress(targetKey) {
     return () => {
       window.removeEventListener("keydown", downHandler);
     };
-  }, []);
+  },);
   return keyPressed;
 }
 
