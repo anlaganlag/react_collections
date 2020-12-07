@@ -38,7 +38,6 @@ export const App = (props) => {
         ...history.slice(1),
       ];
     } else {
-      setTotalAmount(+totalAmount + parseInt(amount));
       newTotalHrs = +totalAmount + amount;
       newHis = [
         {
@@ -77,7 +76,26 @@ export const App = (props) => {
   return (
     <div>
       <div>
-        <p className="title">本周目標{aim}小時!</p>
+        <p className="title">
+          本周目標{aim}小時!
+          <p>
+            {history && (
+              <p>
+                總工時{" "}
+                {history
+                  .map((i) => i.amount)
+                  .reduce((acc, cur) => acc + cur, 0)}
+                小時 日均
+                {(
+                  history
+                    .map((i) => i.amount)
+                    .reduce((acc, cur) => acc + cur, 0) / history.length
+                ).toFixed(2)}
+                小時
+              </p>
+            )}
+          </p>
+        </p>
       </div>
       {history.length > 30 && (
         <p>
@@ -87,10 +105,12 @@ export const App = (props) => {
             .map((i) => i.amount)
             .reduce((acc, cur) => acc + cur, 0)}
           小時(
-          {(history
-            .slice()
-            .map((i) => i.amount)
-            .reduce((acc, cur) => acc + cur, 0) / history.length).toFixed(2)}
+          {(
+            history
+              .slice()
+              .map((i) => i.amount)
+              .reduce((acc, cur) => acc + cur, 0) / history.length
+          ).toFixed(2)}
           )
         </p>
       )}
@@ -98,12 +118,12 @@ export const App = (props) => {
       {history.length > 6 ? (
         <div>
           <p>
-            過去七天:
+            過去七天
             {history
               .slice(0, 7)
               .map((i) => i.amount)
               .reduce((acc, cur) => acc + cur, 0)}
-            小時(平均
+            小時 日均
             {Math.round(
               (history
                 .slice(0, 7)
@@ -112,36 +132,34 @@ export const App = (props) => {
                 7) *
                 100
             ) / 100}
-            )
+            小時
           </p>
           <p>
-            本周工時:
+            本周進展:
             {history
               .slice(0, week)
               .map((i) => i.amount)
               .reduce((acc, cur) => acc + cur, 0)}
             /{aim}
             <div>
-              <small>
-                剩餘{7 - week}天,日均
-                {(aim -
-                  history
-                    .slice(0, week)
-                    .map((i) => i.amount)
-                    .reduce((acc, cur) => acc + cur, 0)) /
-                  (7 - week)}
-                小時
-              </small>
+              {7 - week > 0 && (
+                <small>
+                  剩餘{7 - week}天 日均需達
+                  {((aim -
+                    history
+                      .slice(0, week)
+                      .map((i) => i.amount)
+                      .reduce((acc, cur) => acc + cur, 0)) /
+                    (7 - week)).toFixed(2)}
+                  小時
+                </small>
+              )}
             </div>
           </p>
         </div>
       ) : (
         record > 0 && (
           <div>
-            <p>
-              過去{record}天:
-              {history.map((i) => i.amount).reduce((acc, cur) => acc + cur, 0)}
-            </p>
             <p>
               過去{record}天:
               {history.map((i) => i.amount).reduce((acc, cur) => acc + cur, 0)}
@@ -204,18 +222,6 @@ export const App = (props) => {
       >
         歷史記錄
       </button>
-      <p>
-        {history && (
-          <p>
-            總工時{" "}
-            {history.map((i) => i.amount).reduce((acc, cur) => acc + cur, 0)}
-            小時(
-            {(history.map((i) => i.amount).reduce((acc, cur) => acc + cur, 0) /
-              history.length).toFixed(2)}
-            )
-          </p>
-        )}
-      </p>
 
       {history.length > 0 &&
         history.map(({ date, weekDay, amount }, idx) => {
