@@ -14,33 +14,41 @@ export const App = (props) => {
       weekDayMapper[weekDay]
     }) 工時(小時) :${amount}`;
   }
-
+  // {date: "2020/12/4", weekDay: 5, amount: 2, 星期: " 星期五 "}
   function handleTodayHrs(amount) {
-    setTotalAmount(+totalAmount + parseInt(amount));
-    // const newHis = [
-    //   ` ${date} 第${Math.ceil(d.getDate() / 7)}周(${
-    //     weekDayMapper[d.getDay()]
-    //   }) 工時(小時) :${amount}`,
-    //   ...history,
-    // ];
-    const newHis = [
-      {
-        date: d.toLocaleDateString(),
-        weekDay: d.getDay(),
-        amount,
-        星期: weekDayMapper[d.getDay()],
-      },
-      ...history,
-    ];
-    const newTotalHrs = +totalAmount + amount;
+    let newHis, newTotalHrs;
+
+    if (history[0] && history[0]["date"] === d.toLocaleDateString()) {
+      newTotalHrs = +totalAmount - history[0]["amount"] + amount;
+      newHis = [
+        {
+          date: d.toLocaleDateString(),
+          weekDay: d.getDay(),
+          amount,
+          星期: weekDayMapper[d.getDay()],
+        },
+        ...history.slice(1),
+      ];
+    } else {
+      setTotalAmount(+totalAmount + parseInt(amount));
+      newTotalHrs = +totalAmount + amount;
+      newHis = [
+        {
+          date: d.toLocaleDateString(),
+          weekDay: d.getDay(),
+          amount,
+          星期: weekDayMapper[d.getDay()],
+        },
+        ...history,
+      ];
+    }
+    setTotalAmount(newTotalHrs);
+
     setHistory(newHis);
     setAmount("1");
     localStorage.setItem(KEYTotalHrs, newTotalHrs);
     localStorage.setItem(KEYTotalHis, JSON.stringify(newHis));
     inputFocusRef.current.focus();
-  }
-  function handleChange(e) {
-    setAmount(+e.target.value);
   }
 
   useEffect(() => {
@@ -72,7 +80,7 @@ export const App = (props) => {
 
       <button
         onClick={() => {
-          const preAmount = (totalAmount- history[0]["amount"] )|| 0;
+          const preAmount = totalAmount - history[0]["amount"] || 0;
 
           const newHis = history.slice(1) || [];
 
