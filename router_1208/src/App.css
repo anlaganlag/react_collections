@@ -1,0 +1,26 @@
+div.app-container {
+  font-family: "Arial";
+}
+
+div.nav-bar {
+  border: 2px;
+  border-color: black;
+  border-style: dashed;
+  margin-bottom: 20px;
+}
+
+div.app-container span {
+  padding: 10px;
+}
+
+div.main-container {
+  height: 100px;
+  background-color: gray;
+  text-align: center;
+  font-size: 2rem;
+}
+
+div.banner {
+  background-color: black;
+  color: white;
+}
