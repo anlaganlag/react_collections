@@ -31,7 +31,7 @@ export const AdjacencyListContextProvider = (props: IProps) => {
 
   const addNode = (node: node) => {
     let tempAdjacencyList = adjacencyList;
-    tempAdjacencyList.push({ count: node.count, target: [] });
+    tempAdjacencyList.push({ count: node.count+1, target: [] });
     setNodeList([...nodeList, node]);
     setAdjacencyList(adjacencyList);
   };
