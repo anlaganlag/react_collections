@@ -1,25 +1,15 @@
-
-var isPossible = function(nums) {
-    const map = new Map();
-    for (let x of nums) {
-        if (!map.has(x)) {
-            map.set(x, new MinPriorityQueue());
-        }
-        if (map.has(x - 1)) {
-            const prevLength = map.get(x - 1).dequeue()['priority'];
-            if (map.get(x - 1).isEmpty()) {
-                map.delete(x - 1);
-            }
-            map.get(x).enqueue(x, prevLength + 1);
-        } else {
-            map.get(x).enqueue(x, 1);
-        }
-    }
-    for (let [key, value] of map.entries()) {
-        if (value.front()['priority'] < 3) {
-            return false;
-        }
-    }
-    return true;
+let deck = {
+  suits: ["黑桃", "红心", "梅花", "方片"],
+  cards: Array(52),
+  pick: function () {
+    // NOTE: the line below is now an arrow function, allowing us to capture 'this
+    return () => {
+      let pickedCard = Math.floor(Math.random() * 52);
+      let pickedSuit = Math.floor(pickedCard / 13);
+      return { suit: this.suits[pickedSuit], card: pickedCard % 13 };
+    };
+  },
 };
-console.log(isPossible([1,2,3,3,4,5]))
+let cardPicker = deck.pick();
+let pickedCard = cardPicker();
+console.log(pickedCard.suit + pickedCard.card)

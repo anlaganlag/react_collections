@@ -1,32 +1,32 @@
 from collections import defaultdict
-p=[[1,0],[7,0],[7,1],[3,1],[2,1],[3,2],[2,6],[5,2]]
+pre=[[1,0],[7,0],[7,1],[3,1],[2,1],[3,2],[2,6],[5,2]]
 n=8
-def canFinish(n ,p):
-    e = defaultdict(list)
-    visitedArray = n*[0]
-    ans = []
-    flag = True
+def canFinish(n ,pre):
+    edges = defaultdict(list)
+    visited = [0]*n
+    cycled = False
+    stack = []
 
-    for i in p:
-        e[i[1]].append(i[0])
-    
-    def dfs(dfsNode):
-        nonlocal flag
-        visitedArray[dfsNode]=1
-        for alNode in e[dfsNode]:
-            if visitedArray[alNode] ==0:
-                dfs(alNode)
-                if flag == False:
+    for i in pre:
+        edges[i[1]].append(i[0])
+
+    def dfs(i):
+        nonlocal cycled
+        visited[i] = 1
+        for c in edges[i]:
+            if not visited[c] :
+                dfs(c)
+                if cycled:
                     return
-            elif visitedArray[alNode] ==1:
-                flag = False
+            elif visited[c]==1:
+                cycled = True
                 return
-        visitedArray[dfsNode] =2
-        ans.append(dfsNode)
+        visited[i] =2
+        stack.append(i)
 
-    for travasNode in range(n):
-        if flag == True and visitedArray[travasNode]==0:
-            dfs(travasNode)
-    return ans[::-1]
+    for i in range(n):
+        if not cycled and not visited[i]:
+            dfs(i)
+    return  stack[::-1]
 
-print(canFinish(n,p))
+print(canFinish(n,pre))

@@ -49,7 +49,6 @@ class App extends Component {
         </div>
         <div id="main_container" className="main-container">
           <span>Main Container</span>
-            <Switch>
               <Route exact path="/">
                 <div>
                   <span>Default container. We are in root path</span>
@@ -60,7 +59,6 @@ class App extends Component {
                 <WorldBanner />
               </Route>
               <Redirect to="/" />
-            </Switch>
           </div>
         </div>
       </Router>
