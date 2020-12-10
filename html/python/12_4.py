@@ -1,6 +1,10 @@
 from collections import defaultdict
-pre=[[1,0],[7,0],[7,1],[3,1],[2,1],[3,2],[2,6],[5,2]]
-n=8
+# pre=[[1,0],[7,0],[7,1],[3,1],[2,1],[3,2],[2,6],[5,2]]
+# n=8
+
+n=2
+pre = [[1,0]]
+
 def canFinish(n ,pre):
     edges = defaultdict(list)
     visited = [0]*n

@@ -19,7 +19,7 @@ const drawNode = (
   context.font = "20px Roboto";
   context.textAlign = "center";
   context.textBaseline = "middle";
-  context.fillText(nodeCount.toString(), x, y);
+  context.fillText((nodeCount+1).toString(), x, y);
 };
 
 export default drawNode;

@@ -37,7 +37,7 @@ const Dropdown = ({ nodeList, count, setNode }: AppProps) => {
       {open ? (
         <div className="dropdown-item-container">
           {nodeList.length <= 1 ? (
-            <div className="dropdown-item">Nodes Unavailable</div>
+            <div className="dropdown-item">节点为空</div>
           ) : (
             nodeList.map((item) => {
               if (item.count !== count) {
