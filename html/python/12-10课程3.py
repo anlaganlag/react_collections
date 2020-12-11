@@ -15,6 +15,6 @@ def foo(courses):
     return len(heap)
 
 l1 = [[100,200],[200,1300],[1000,1250],[2000,3200]]
+l2 = [[4,6],[5,5],[2,6]]
 
-
-print(foo(l1))
+print(foo(l2))

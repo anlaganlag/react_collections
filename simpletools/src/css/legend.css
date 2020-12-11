@@ -1,0 +1,36 @@
+.legend {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    padding: 24px 0;
+    text-align: center;}
+
+.legend-title {
+    font-weight: bold;}
+
+.range{
+    display: inline-flex;
+    margin-left: 24px;
+    width: 340px;
+}
+
+.positive{
+background-color: #388e3c;
+padding: 8px 5px;
+text-align: center;
+flex-basis: 33.3333%;}
+
+.neutral {
+    background-color: #ffe57f;
+    color: #555;
+padding: 8px 5px;
+text-align: center;
+flex-basis: 33.3333%;}
+
+.negative {
+background-color: #e53935;
+    padding: 8px 5px;
+text-align: center;
+flex-basis: 33.3333%;
+}
