@@ -3,8 +3,8 @@ import { CONSTANTS } from "../actions";
 const initialState = {
   "board-0": {
     id: "board-0",
+    title: "myboard",
     lists: ["list-0"],
-    title: "myboard"
   }
 };
 
@@ -30,7 +30,7 @@ const boardsReducer = (state = initialState, action) => {
         type
       } = action.payload;
 
-      // draggin lists around
+      // 拖拽列表...
       if (type === "list") {
         const pulledOutList = lists.splice(droppableIndexStart, 1);
         lists.splice(droppableIndexEnd, 0, ...pulledOutList);
