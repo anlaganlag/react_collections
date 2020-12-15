@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.sk-input {
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+}
+
+.sk-button-primary {
+  background-color: var(--blue);
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  width: 4rem;
+  height: 2rem;
+  width: 4rem;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: ease-in 1s;
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #85dc;
+  color: white;
+  border-radius: 10px;
+  font-size: 40px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+    transition: 0.5s;
+  }
+}
+
+// @mixin reset-button($color: whitesmoke, $borderRad: 11px) {
+//   color: whitesmoke;
+//   border: none;
+//   border-radius: 11px;
+//   &:hover {
+//     cursor: pointer;
+//     background-color: black;
+//     transition: 0.5s;
+//   }
+// }
