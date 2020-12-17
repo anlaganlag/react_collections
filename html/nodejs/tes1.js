@@ -1,0 +1,3 @@
+const compose = (...fns) => (arg) => fns.reduce((acc, f) => f(acc), arg);
+
+//将所有的参数用rest打包成列表...

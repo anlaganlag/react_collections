@@ -11,7 +11,7 @@ const storeTime = (d) => ({
   secs: d.getSeconds(),
 });
 
-const below12 = (t) => ({
+const below12hrs = (t) => ({
   ...t,
   hrs: t.hrs > 12 ? t.hrs - 12 : t.hrs,
 });
@@ -21,8 +21,8 @@ const ampmHandle = (t) => ({
   ampm: t.hrs >= 12 ? "下午" : "上午",
 });
 
-const dp = (t) => (tm) => t(tm);
-const convert = (ct) => compose(ampmHandle, below12)(ct);
+const dp = (log) => (tm) => log(tm);
+const convert = (ct) => compose(ampmHandle, below12hrs)(ct);
 
 
 const fc = (f) => (t) =>
@@ -43,7 +43,8 @@ const dd = (ct) =>
 
 const init = () =>
   setInterval(
-    compose(clear, now, storeTime, convert, dd, fc("hh:mm:ss tt"), dp(log), os)
+    compose(clear, now, storeTime, convert, dd, fc("hh:mm:ss tt"), dp(log), ),os()
   );
 
 init();
+log("fp牛逼")
