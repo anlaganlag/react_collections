@@ -75,11 +75,11 @@ const Home = ({ boards, boardOrder, dispatch }) => {
   const renderCreateBoard = () => {
     return (
       <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
-        <CreateTitle>Create a new Board</CreateTitle>
+        <CreateTitle>创建新看板</CreateTitle>
         <CreateInput
           onChange={handleChange}
           value={newBoardTitle}
-          placeholder="Your boards title..."
+          placeholder="输入看板名称..."
           type="text"
         />
       </form>

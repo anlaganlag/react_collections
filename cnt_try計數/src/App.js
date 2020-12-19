@@ -6,9 +6,18 @@ import {
   KEYCollectHis,
 } from "./utils";
 import "./App.css";
+import { ConfigProvider, DatePicker, message } from "antd";
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import zhCN from "antd/lib/locale/zh_CN";
+import moment from "moment";
+import "moment/locale/zh-cn";
+import "antd/dist/antd.css";
+moment.locale("zh-cn");
 
 export const App = (props) => {
   const [totalAmount, setTotalAmount] = useState(0);
+  const [date, setDate] = useState(null);
+
   const [history, setHistory] = useState([]);
   // eslint-disable-next-line
   const [collectHistory, setCollectHistory] = useState([]);
@@ -17,6 +26,13 @@ export const App = (props) => {
   const inputFocusRef = useRef();
   const d = new Date();
   // const [record, setRecord] = useState(0)
+
+  const handleChange = (value) => {
+    message.info(
+      `您选择的日期是: ${value ? value.format("YYYY年MM月DD日") : "未选择"}`
+    );
+    setDate(value);
+  };
 
   function formatDate(date, weekDay, amount) {
     return ` ${date} 第${Math.ceil(date.split("/")[2] / 7)}周(${
@@ -77,8 +93,16 @@ export const App = (props) => {
   return (
     <div>
       <div>
+        <ConfigProvider locale={zhCN}>
+          <div style={{ width: 400, margin: "100px auto" }}>
+            <DatePicker onChange={handleChange} />
+            <div style={{ marginTop: 16 }}>
+              当前日期：{date ? date.format("YYYY年MM月DD日") : "未选择"}
+            </div>
+          </div>
+        </ConfigProvider>
         <p className="title">
-          本周目標{aim}小時!
+  {date && date.format("MM月DD日")}本周目標{aim}小時!
           <p>
             {history && (
               <p>
@@ -146,12 +170,14 @@ export const App = (props) => {
               {7 - week > 0 && (
                 <small>
                   剩餘{7 - week}天 日均需達
-                  {((aim -
-                    history
-                      .slice(0, week)
-                      .map((i) => i.amount)
-                      .reduce((acc, cur) => acc + cur, 0)) /
-                    (7 - week)).toFixed(2)}
+                  {(
+                    (aim -
+                      history
+                        .slice(0, week)
+                        .map((i) => i.amount)
+                        .reduce((acc, cur) => acc + cur, 0)) /
+                    (7 - week)
+                  ).toFixed(2)}
                   小時
                 </small>
               )}
@@ -225,7 +251,7 @@ export const App = (props) => {
       </button>
 
       {history.length > 0 &&
-      // eslint-disable-next-line
+        // eslint-disable-next-line
         history.map(({ date, weekDay, amount }, idx) => {
           if (idx < 35) {
             return (

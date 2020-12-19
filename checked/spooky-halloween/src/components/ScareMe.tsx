@@ -76,8 +76,7 @@ const getRandomTechSupportGorePost = async () => {
   }
 }
 
-const ScareMe = () => {
-  const [input, setInput] = useState(keyWord)
+const ScareMe = ({setInput,input}:object) => {
   function handleSubmit (e:any) {
     e.preventDefault();
     console.log("e",e.target[0].defaultValue);

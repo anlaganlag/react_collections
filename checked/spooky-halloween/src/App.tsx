@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './App.css'
 import Home from './components/Home'
 import Navigation from './components/Navigation'
@@ -11,13 +11,14 @@ import {keyWord} from './reducer'
 function App() {
   const currentPage = useGlobalState('currentPage')
 
+  const [input, setInput] = useState("mapporn")
 
   const PageBySelection = () => {
     switch (currentPage) {
       case '首页':
         return <Home />
       case 'nofap':
-        return <ScareMe />
+        return <ScareMe setInput={setInput} input={input}/>
       case `来创作个故事`:
         return <StoryTime />
       default:

@@ -46,13 +46,13 @@ class TrelloBoard extends PureComponent {
     const { boardID } = match.params;
     const board = boards[boardID];
     if (!board) {
-      return <p>Board not found</p>;
+      return <p>看板没有找到</p>;
     }
     const listOrder = board.lists;
 
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Link to="/">Go Back</Link>
+        <Link to="/">返回主页</Link>
         <h2>{board.title}</h2>
         <Droppable droppableId="all-lists" direction="horizontal" type="list">
           {(provided) => (
