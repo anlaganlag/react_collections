@@ -1,13 +1,16 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import ReactDOM from "react-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import Store from "./stateManage/store";
-import App from "./components/App";
+
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import { createGlobalStyle } from "styled-components";
 import $ from "jquery";
 import { PersistGate } from "redux-persist/integration/react";
+import Store from "./stateManage/store";
+import Home from "./components/Home";
+import TrelloBoard from "./components/TrelloBoard";
 
 const { persistor, store } = Store();
 
@@ -18,6 +21,18 @@ const GlobalStyle = createGlobalStyle`
     transition: all 0.5s ease-in;
   }
 `;
+class App extends PureComponent {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route path="/" exact component={Home} />
+          <Route path="/:boardID" component={TrelloBoard} />
+        </div>
+      </Router>
+    );
+  }
+}
 
 ReactDOM.render(
   <Provider store={store}>
@@ -29,7 +44,7 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-$(document).bind("DOMNodeRemoved", function(e) {
+$(document).bind("DOMNodeRemoved", function (e) {
   console.log("Removed: " + e.target.nodeName);
 });
 
