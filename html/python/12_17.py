@@ -11,19 +11,30 @@ def maxProfit( prices, fee: int) -> int:
 # print(maxProfit(prices,2))
 
 
-def allPathsSourceTarget(graph):
-    n = len(graph)
-    ans = []
+# def allPathsSourceTarget(graph):
+#     n = len(graph)
+#     ans = []
 
-    def f(node, path):
-        if node == n - 1:
-            ans.append(path + [node])
-            return
-        for next_node in graph[node]:
-            f(next_node, path + [node])
+#     def f(node, path):
+#         if node == n - 1:
+#             ans.append(path + [node])
+#             return
+#         for next_node in graph[node]:
+#             f(next_node, path + [node])
 
-    f(0, [])
-    return ans
+#     f(0, [])
+#     return ans
 
-g = [[1,2],[3],[3],[]]
-print(allPathsSourceTarget(g))
+# g = [[1,2],[3],[3],[]]
+# print(allPathsSourceTarget(g))
+
+
+def smallestSubsequence(s: str) -> str:
+    ans = set()
+    for i in s:
+        
+        if i not in ans:
+            ans.add(i)
+    return "".join([i for i in ans])
+s1 = "leetcode"
+print(smallestSubsequence(s1))
