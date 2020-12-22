@@ -1,0 +1,39 @@
+@import '~@zesty-io/core/colors.less';
+
+.Email {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+
+  .EmailAddress {
+    margin: 8px 0;
+    display: grid;
+    grid-template-columns: 20px 2fr 1fr 43px;
+    align-items: center;
+    grid-gap: 4px;
+  }
+
+  .addEmail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16px;
+
+    label {
+      display: block;
+      margin: 8px 0 0 0;
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+
+    label:nth-child(1) {
+      flex: 2 0 0px;
+      margin-right: 8px;
+    }
+    label:nth-child(2) {
+      flex: 1 0 0px;
+    }
+  }
+}

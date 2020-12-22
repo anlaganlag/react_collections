@@ -1,0 +1,92 @@
+@import '~@zesty-io/core/colors.less';
+
+.TeamCard {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 !important;
+  max-height: 570px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 0 10px #8398bd;
+  }
+
+  .CardContent {
+    margin: 1rem 0;
+    overflow-y: scroll;
+    position: relative;
+
+    .Settings {
+      .Edit {
+        color: lighten(@zesty-gray, 20%);
+        cursor: pointer;
+        position: absolute;
+        top: 3px;
+        right: 9px;
+        &:hover {
+          color: @zesty-gray;
+        }
+      }
+
+      h3 {
+        margin-right: 25px;
+      }
+
+      .Editing {
+        margin-top: 12px;
+
+        textarea {
+          height: 75px;
+          min-width: auto;
+        }
+
+        .actions {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .Delete {
+          i {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .Members {
+      margin: 1rem 0;
+      .Member {
+        display: flex;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        align-items: center;
+
+        .Name {
+          flex: 1;
+          padding: 0 0.5rem;
+        }
+        .Remove {
+          cursor: pointer;
+          &:hover,
+          &:focus,
+          &:active {
+            color: @zesty-red;
+          }
+        }
+      }
+    }
+  }
+
+  .CardFooter {
+    form {
+      display: flex;
+      align-items: center;
+
+      input {
+        margin-right: 8px;
+        width: 253px;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import '~@zesty-io/core/colors.less';
+
+.TeamAccess {
+  margin: 0 0 1.5rem;
+
+  .addCompany {
+    display: grid;
+    grid-template-columns: 1fr 200px auto;
+    grid-auto-flow: row;
+    grid-gap: 8px;
+    margin: 16px 0 0 0;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .companyTable {
+    padding: 1rem 0 0;
+    header {
+      display: grid;
+      justify-items: start;
+      grid-auto-flow: row;
+      grid-template-columns: 1fr 2fr 0.5fr;
+      padding: 0 0.5rem 0.5rem;
+      h3 {
+        font-size: 1em;
+      }
+    }
+    main {
+      display: grid;
+      grid-template-rows: auto;
+      align-items: baseline;
+      article {
+        align-items: center;
+        min-height: 1.5rem;
+        display: grid;
+        padding: 0.5rem;
+        grid-template-columns: 1fr 2fr 0.5fr;
+        &:nth-child(odd) {
+          background-color: @zesty-white;
+        }
+        i {
+          font-size: 1.1rem;
+          color: @zesty-light-grey;
+          cursor: pointer;
+        }
+        .trash {
+          transition: all 0.1s;
+          color: lighten(@zesty-gray, 40%);
+          &:hover,
+          &:focus {
+            color: @zesty-red;
+          }
+        }
+        .hidden {
+          color: @zesty-white;
+        }
+        span {
+          padding: 0.3rem 0;
+        }
+      }
+      .TeamMembers {
+        color: @zesty-light-grey;
+        grid-column: span 3;
+        padding: 0;
+        span {
+          padding: 0.3rem 0.5rem;
+        }
+      }
+    }
+  }
+  .info {
+    color: #607394;
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    overflow-y: visible;
+    position: relative;
+    max-width: 668px;
+    background: #dfeeff;
+    color: #2e436b;
+    border: solid 1px #a2bbd8;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,60 @@
+.AccessToken {
+  align-items: center;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 150px;
+  grid-gap: 8px;
+  padding: 16px 0;
+  width: 100%;
+
+  .AccessTokenInput {
+    position: relative;
+    input {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .Name {
+    cursor: pointer;
+    i {
+      display: none;
+      padding: 0.5rem;
+    }
+    &:hover {
+      i {
+        display: inline;
+      }
+    }
+  }
+
+  .Edit {
+    display: flex;
+    align-items: center;
+    input {
+      margin-right: 8px;
+      width: 300px;
+    }
+  }
+
+  .Dropdown {
+    width: 300px;
+  }
+
+  .Button {
+    width: 150px;
+  }
+}
+
+.Dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.Error {
+  color: tomato;
+  font-size: 10px;
+  position: absolute;
+  bottom: -20px;
+}

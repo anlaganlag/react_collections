@@ -1,0 +1,119 @@
+@import '~@zesty-io/core/colors.less';
+@import '~@zesty-io/core/typography.less';
+
+.WebsiteCard {
+  padding: 0;
+  box-shadow: 0 0 5px #d6e1f3;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 350px;
+  @supports (display: grid) {
+    display: grid;
+    grid-template-rows: 1fr 200px 35px;
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 0 10px #8398bd;
+  }
+
+  .CardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      word-break: break-word;
+    }
+    a {
+      margin: 0;
+    }
+    i {
+      justify-self: flex-end;
+    }
+  }
+
+  .cover {
+    background-size: cover;
+    box-shadow: inset 0px -20px 100px #1b202c;
+  }
+
+  .CardContent {
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 200px;
+    color: #b2c7d6;
+
+    img {
+      max-width: 100%;
+    }
+  }
+  .Offline {
+    flex-direction: column;
+    .icon {
+      font-size: 7em;
+    }
+  }
+
+  .CardFooter {
+    padding: 0;
+
+    .controls {
+      display: flex;
+      flex-basis: auto;
+      display: grid;
+      grid-template-columns: 35px 35px 35px 1fr;
+      a {
+        border-right: 1px solid @zesty-field-blue;
+        padding: 9px;
+        flex-basis: auto;
+        margin: 0;
+        text-align: center;
+      }
+      a:last-child {
+        flex-basis: auto;
+        border: none;
+        text-align: right;
+        padding: 4px 9px;
+      }
+      .selectBlueprint {
+        font-weight: 900;
+      }
+    }
+  }
+}
+
+.DomainsDropDown {
+  position: relative;
+}
+
+.DomainsDropDownBtn {
+  color: #497edf;
+  cursor: pointer;
+  background: none;
+  margin-left: 10px;
+}
+
+.DomainsDropDownContent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    display: block;
+    text-align: left !important;
+  }
+}
+
+.DomainsDropDown:hover .DomainsDropDownContent {
+  display: block;
+}

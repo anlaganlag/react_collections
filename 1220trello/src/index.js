@@ -1,16 +1,20 @@
 import React, { PureComponent } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route } from "react-router-dom";
-import { Provider } from "react-redux";
 
-import * as serviceWorker from "./serviceWorker";
-import "./index.css";
+import { Provider } from "react-redux";
 import { createGlobalStyle } from "styled-components";
-import $ from "jquery";
 import { PersistGate } from "redux-persist/integration/react";
+
 import Store from "./stateManage/store";
 import Home from "./components/Home";
 import TrelloBoard from "./components/TrelloBoard";
+
+import $ from "jquery";
+import * as serviceWorker from "./serviceWorker";
+import "./index.css";
+
+
 
 const { persistor, store } = Store();
 

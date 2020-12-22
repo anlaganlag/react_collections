@@ -1,0 +1,46 @@
+@import '~@zesty-io/core/colors.less';
+@import '~@zesty-io/core/typography.less';
+
+.WebsiteCreate {
+  background: lighten(#f2f4fb, 2.5%);
+  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 450px;
+
+  margin: 1rem;
+  @supports (display: grid) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    display: grid;
+    grid-template-rows: 0fr 2fr 0fr;
+    margin: 0;
+  }
+
+  header {
+    padding: 1rem;
+    background: lighten(#f2f4fb, 2%);
+    border-bottom: 1px solid #f2f4fb;
+    .name {
+      font-size: 1.1em;
+    }
+  }
+
+  main {
+    border-bottom: 1px solid #f2f4fb;
+    padding: 1rem;
+    flex: 1 0 350px;
+    p {
+      margin: 0 0 8px 0;
+    }
+  }
+  footer {
+    padding: 1rem;
+    a {
+      text-decoration: none;
+    }
+  }
+}

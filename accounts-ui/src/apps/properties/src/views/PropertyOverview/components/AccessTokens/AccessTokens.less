@@ -1,0 +1,56 @@
+.Modal {
+  width: 700px;
+
+  .TokenDisplay {
+    display: flex;
+    margin-top: 2em;
+
+    .TokenArea {
+      border: 0;
+      width: 80%;
+      font-size: 16px;
+      height: 40px;
+      background: #ebebeb;
+      padding: 10px;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.ConfirmModal {
+  width: 150px;
+
+  .ButtonsConfirm {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.Token {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.TokenActions {
+  display: flex;
+}
+
+.TokenAction {
+  margin-right: 1em;
+  height: 40px;
+}
+
+.TokenMeta {
+  color: #404659;
+}
+
+.CardContent {
+  .Link {
+    margin: 0;
+  }
+}

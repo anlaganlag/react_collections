@@ -1,0 +1,45 @@
+@import '~@zesty-io/core/colors.less';
+@import '~@zesty-io/core/typography.less';
+
+.BlueprintCard {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+
+  .CardContent {
+    flex: 0 0 400px;
+
+    .coverimage {
+      width: 100%;
+      margin-bottom: 16px;
+      background: @zesty-light-grey;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: @zesty-white;
+      text-align: center;
+    }
+
+    .noimage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: @zesty-grey;
+      color: @zesty-white;
+      height: 80px;
+      margin-bottom: 16px;
+    }
+  }
+  .CardFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .controls {
+      flex: 1 1 0px;
+      & > a {
+        padding: 0 4px 0 0;
+      }
+    }
+  }
+}

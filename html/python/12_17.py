@@ -38,3 +38,5 @@ def smallestSubsequence(s: str) -> str:
     return "".join([i for i in ans])
 s1 = "leetcode"
 print(smallestSubsequence(s1))
+
+

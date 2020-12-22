@@ -9,38 +9,37 @@ export const CONSTANTS = {
   EDIT_LIST_TITLE: "EDIT_LIST_TITLE",
   DELETE_LIST: "DELETE_LIST",
   SET_ACTIVE_BOARD: "SET_ACTIVE_BOARD",
-  ADD_BOARD: "ADD_BOARD"
+  ADD_BOARD: "ADD_BOARD",
 };
 
 //看板相關的action
 
-
-export const setActiveBoard = id => {
+export const setActiveBoard = (id) => {
   return {
     type: CONSTANTS.SET_ACTIVE_BOARD,
-    payload: id
+    payload: id,
   };
 };
 
-export const addBoard = title => {
+export const addBoard = (title) => {
   const id = uuid();
   return {
     type: CONSTANTS.ADD_BOARD,
-    payload: { title, id }
+    payload: { title, id },
   };
 };
 
-
-
 //列表相關的action
 
-export const addList = title => {
+export const addList = (title) => {
   return (dispatch, getState) => {
+    const curState = getState();
+    console.table(curState);
     const boardID = getState().activeBoard;
     const id = uuid();
     dispatch({
       type: CONSTANTS.ADD_LIST,
-      payload: { title, boardID, id }
+      payload: { id, title, boardID },
     });
   };
 };
@@ -64,8 +63,8 @@ export const sort = (
         droppableIndexStart,
         draggableId,
         type,
-        boardID
-      }
+        boardID,
+      },
     });
   };
 };
@@ -75,24 +74,23 @@ export const editTitle = (listID, newTitle) => {
     type: CONSTANTS.EDIT_LIST_TITLE,
     payload: {
       listID,
-      newTitle
-    }
+      newTitle,
+    },
   };
 };
 
-export const deleteList = listID => {
+export const deleteList = (listID) => {
   return (dispatch, getState) => {
     const boardID = getState().activeBoard;
     return dispatch({
       type: CONSTANTS.DELETE_LIST,
       payload: {
         listID,
-        boardID
-      }
+        boardID,
+      },
     });
   };
 };
-
 
 //卡片相關的action
 
@@ -100,21 +98,20 @@ export const addCard = (listID, text) => {
   const id = uuid();
   return {
     type: CONSTANTS.ADD_CARD,
-    payload: { text, listID, id }
+    payload: { id, text, listID },
   };
 };
 
 export const editCard = (id, listID, newText) => {
   return {
     type: CONSTANTS.EDIT_CARD,
-    payload: { id, listID, newText }
+    payload: { id, newText,listID },
   };
 };
 
 export const deleteCard = (id, listID) => {
   return {
     type: CONSTANTS.DELETE_CARD,
-    payload: { id, listID }
+    payload: { id, listID },
   };
 };
-

@@ -1,0 +1,43 @@
+@import '~@zesty-io/core/colors.less';
+
+.row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d3e1f7;
+
+  .action {
+    margin: 0;
+    padding: 9px;
+    background: none;
+    border: none;
+    border-left: 1px solid #c7d4ea;
+
+    i {
+      color: lighten(@zesty-tab-blue, 20%);
+      margin: 0;
+      text-shadow: none;
+    }
+  }
+  .action:first-child {
+    border-left: none;
+    padding: 9px 0;
+  }
+  .action:hover,
+  .action:active,
+  .action:focus {
+    i {
+      color: @zesty-blue;
+    }
+  }
+
+  .overview {
+    border: none;
+    flex: 1;
+  }
+}
+.row:first-child {
+  border: none;
+}
+.row:last-child {
+  margin-bottom: 3rem;
+}
