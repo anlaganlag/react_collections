@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "./App.css";
-import useKeyPress from "./useKeyPress"
+import useKeyPress from "./useKeyPress";
 
-let initialKeyWordList = [
-  "learnjavascript",
-  "reactJS",
-  "javascript",
-  "vuejs",
-];
+let initialKeyWordList = ["learnjavascript", "reactJS", "javascript", "vuejs"];
 const KEY = "lsRedditKey";
 export function htmlDecode(input) {
   var doc = new DOMParser().parseFromString(input, "text/html");
@@ -17,37 +12,45 @@ export function htmlDecode(input) {
 
 function Reddit({ searchTerms }) {
   const [posts, setPosts] = useState([]);
-  const [error, seterror] = useState(null)
+  const [error, seterror] = useState(null);
 
   useEffect(() => {
     // Fetch the data when the component mounts
     fetch(`https://www.reddit.com/r/${searchTerms}.json`)
       .then((resp) => resp.json())
-      .then((json) =>
+      .then((json) => {
+        console.log("json: ", json);
         // Save the posts into state
-        setPosts(json.data.children.map((c) => c.data))
-      )
+        setPosts(
+          json.data.children.map((c) => {
+            console.log("c.data", c.data);
+            return c.data;
+          })
+        );
+      })
       .catch((e) => {
         console.error(e);
-        seterror(e)
-      })
+        seterror(e);
+      });
   }, [searchTerms, setPosts]);
 
   return (
     <>
-          {error&&<p>出错了{error};</p>}
+      {error && <p>出错了{error};</p>}
 
-    <ul>
-      {posts.map((word,idx) => (
-        <li key={word.id}>
-          <a href={word.url}>{idx+1} .&nbsp;{htmlDecode(word.title)}</a>
-          <span className="time">
-            {"update "}
-            {moment(word.created * 1000).fromNow()}
-          </span>
-        </li>
-      ))}
-    </ul>
+      <ul>
+        {posts.map((word, idx) => (
+          <li key={word.id}>
+            <a href={word.url}>
+              {idx + 1} .&nbsp;{htmlDecode(word.title)}
+            </a>
+            <span className="time">
+              {"update "}
+              {moment(word.created * 1000).fromNow()}
+            </span>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
@@ -62,11 +65,9 @@ export default function App() {
   //是否可以删除或者置顶
   // const [delState, setEditState] = useState(false);
   const [onTop, setonTop] = useState(false);
-  const openPress = useKeyPress('o');
-  const delPress = useKeyPress('d');
-  console.log(openPress, typeof openPress)
-
-
+  const openPress = useKeyPress("o");
+  const delPress = useKeyPress("d");
+  console.log(openPress, typeof openPress);
 
   //coding technology software cscareerquestions
   // Update the searchTerms when the user presses enter
@@ -89,7 +90,7 @@ export default function App() {
       return;
     }
     setSearchTerms(inputValue);
-    if (!history.includes(inputValue)){
+    if (!history.includes(inputValue)) {
       setHistory([...history, inputValue]);
     }
 
@@ -118,15 +119,17 @@ export default function App() {
     <>
       <h1>Reddit贴吧</h1>
       <form onSubmit={handleSubmit}>
-        <label for="searchTerm"><span role="img" aria-label="搜索放大镜">🔎</span> </label>
+        <label for="searchTerm">
+          <span role="img" aria-label="搜索放大镜">
+            🔎
+          </span>{" "}
+        </label>
         <input
           id="searchTerm"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button >
-          {delPress ? "删除模式(D)" : "搜索模式(D)"}
-        </button>
+        <button>{delPress ? "删除模式(D)" : "搜索模式(D)"}</button>
         <button className="toTop" onClick={() => setonTop(!onTop)}>
           {onTop ? "关闭置顶" : "置顶标签"}
         </button>
