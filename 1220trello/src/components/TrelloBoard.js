@@ -31,12 +31,12 @@ class TrelloBoard extends PureComponent {
 
     this.props.dispatch(
       sort(
-        source.droppableId,
-        destination.droppableId,
-        source.index,
-        destination.index,
-        draggableId,
-        type
+        source.droppableId, //all-lists
+        destination.droppableId,//all-lists
+        source.index,//1
+        destination.index,//0
+        draggableId,//lisst-xxxx
+        type//list
       )
     );
   };

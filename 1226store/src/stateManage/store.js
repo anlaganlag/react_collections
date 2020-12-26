@@ -7,7 +7,7 @@ import storage from "redux-persist/lib/storage";
 
 export default () => {
   let store = createStore(
-    persistReducer( { key: "root", storage }, rootReducer ),
+    persistReducer({ key: "root", storage }, rootReducer),
     applyMiddleware(thunk)
   );
   let persistor = persistStore(store);

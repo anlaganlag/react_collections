@@ -8,7 +8,7 @@ const mapStateToProps = state => {
 const ConnectedList = ({ articles }) => (
   <ul>
     {articles.map(el => (
-      <li key={el.id}>{el.title}</li>
+      <li key={Math.random()}>{el.title}</li>
     ))}
   </ul>
 );
