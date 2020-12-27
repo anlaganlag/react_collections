@@ -26,7 +26,7 @@ export const addBoard = (title) => ({
 
 //列表相關的action
 
-export const addList = (title) => (dispatch, getState) => 
+export const addList = (title) => (dispatch, getState) =>
   dispatch({
     type: CONSTANTS.ADD_LIST,
     payload: { id: uuid(), title, boardID: getState().activeBoard },
@@ -39,7 +39,7 @@ export const sort = (
   droppableIndexEnd,
   draggableId,
   type
-) => (dispatch, getState) => 
+) => (dispatch, getState) =>
   dispatch({
     type: CONSTANTS.DRAG_HAPPENED,
     payload: {
@@ -50,16 +50,16 @@ export const sort = (
       draggableId,
       type,
       boardID: getState().activeBoard,
-    }
-  })
+    },
+  });
 
 export const editTitle = (listID, newTitle) => ({
   type: CONSTANTS.EDIT_LIST_TITLE,
   payload: {
     listID,
     newTitle,
-  }
-})
+  },
+});
 
 export const deleteList = (listID) => (dispatch, getState) =>
   dispatch({
@@ -68,7 +68,7 @@ export const deleteList = (listID) => (dispatch, getState) =>
       listID,
       boardID: getState().activeBoard,
     },
-  })
+  });
 
 //卡片相關的action
 

@@ -1,0 +1,141 @@
+@import 'variables';
+
+.header {
+	padding: 30px 0;
+	background-color: $primaryColor;
+	color: $primaryTextColor;
+
+	&__logo {
+		text-transform: uppercase;
+	}
+}
+
+.pokemonList {
+	margin: 10px 0;
+
+	&__item {
+		margin: 10px;
+
+		&:hover {
+			transform: scale(0.98);
+		}
+
+		.flex {
+			flex-direction: column;
+		}
+	}
+
+	&__itemName {
+		text-transform: capitalize;
+		margin-top: 5px;
+	}
+
+	&__404.flex {
+		flex-direction: column;
+		min-height: 200px;
+
+		h2,
+		h3 {
+			text-align: center;
+		}
+	}
+}
+
+.searchBar {
+	margin: 10px 0;
+
+	&__input {
+		display: inline-block;
+		font-size: 16px;
+		padding: 10px;
+		border-style: none;
+		border-radius: 5px;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.navBtns {
+	margin: 10px 0;
+
+	.container.flex {
+		justify-content: space-around;
+	}
+
+	&__next,
+	&__previous {
+		&--hidden {
+			visibility: hidden;
+		}
+	}
+}
+
+.pokemonInfo {
+	margin: 10px 0;
+
+	&__profile {
+		margin: 10px;
+
+		&.flex {
+			flex-direction: column;
+		}
+	}
+
+	&__name {
+		text-transform: capitalize;
+		margin: 5px 0;
+	}
+
+	&__types {
+		text-transform: capitalize;
+		margin-top: 0;
+	}
+
+	&__stats {
+		text-align: center;
+		margin: 10px;
+	}
+
+	&__statLabel {
+		text-transform: uppercase;
+		margin-bottom: 5px;
+	}
+
+	&__statsItem {
+		&.flex {
+			justify-content: space-between;
+		}
+
+		text-transform: capitalize;
+	}
+
+	&__statsItemName,
+	&__statsItemValue {
+		margin: 0;
+	}
+
+	&__statsItemName {
+		margin-right: 20px;
+	}
+}
+
+.goBack {
+	margin: 40px 0 10px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: $primaryColor;
+	color: $primaryTextColor;
+	height: $footerHeight;
+
+	&__authorLink {
+		color: $secondaryColor;
+
+		&:hover {
+			border-bottom: 1px $secondaryColor solid;
+		}
+	}
+}
