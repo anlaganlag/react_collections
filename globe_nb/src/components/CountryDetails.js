@@ -6,19 +6,19 @@ function Country({ country }) {
       <div className="details-container">
         <div className="general-details sub-containers">
           <div className="title">
-            <h4>GENERAL DETAILS</h4>
+            <h4> 國家信息</h4>
           </div>
           <div className="general-details-split split">
             <div>
-              <p>Country Name: {country.name}</p>
-              <p>Capital: {country.capital}</p>
+              <p>國名: {country.name}</p>
+              <p>首府: {country.capital}</p>
               <img src={country.flag} alt="country-flag"></img>
               <p>
-                Alpha Code: {country.alpha2Code} or {country.alpha3Code}
+                 代碼: {country.alpha2Code} 或 {country.alpha3Code}
               </p>
             </div>
             <div>
-              <p>Neighbours: </p>
+              <p>鄰國: </p>
               {country.borders.map((border) => (
                 <p>{border}</p>
               ))}
@@ -27,24 +27,23 @@ function Country({ country }) {
         </div>
         <div className="economic-details sub-containers">
           <div className="title">
-            <h4>ECONOMIC DETAILS</h4>
+            <h4> 經濟信息</h4>
           </div>
           <div className="split">
-            <p>Currency</p>
             {country.currencies.map((currency) => (
               <div>
-                <p>Name: {currency.name}</p>
-                <p>Code: {currency.code}</p> <p>Symbol: {currency.symbol}</p>
+                <p>貨幣名: {currency.name}</p>
+                <p>貨幣縮寫: {currency.code}</p> <p>符號: {currency.symbol}</p>
               </div>
             ))}
           </div>
         </div>
         <div className="geographic-details sub-containers">
           <div className="title">
-            <h4>GEOGRAPHIC DETAILS</h4>
+            <h4>位置信息</h4>
           </div>
           <div className="split">
-            <p>Region: {country.subregion}</p>
+            <p>地區: {country.subregion}</p>
             {country.timezones.map((timezone) => (
               <p>{timezone}</p>
             ))}

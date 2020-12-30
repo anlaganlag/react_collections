@@ -12,21 +12,29 @@ function App() {
   const [markers, setMarkers] = useState({ markers: [] });
   console.log(markers);
 
-  function handleChange(e) {
-    setUserInput(e.target.value);
-  }
+  const handleChange = (e) => setUserInput(e.target.value);
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch(`https://restcountries.eu/rest/v2/name/${userInput}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCountry(data[0]);
-        addNewMarker(data[0]);
-      });
-  }
+    const userInputInfo = await fetch(
+      `https://restcountries.eu/rest/v2/name/${userInput}`
+    );
+    const data = await userInputInfo.json();
+    setCountry(data[0]);
+    addNewMarker(data[0]);
+  };
 
-  function addNewMarker(country) {
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   fetch(`https://restcountries.eu/rest/v2/name/${userInput}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setCountry(data[0]);
+  //       addNewMarker(data[0]);
+  //     });
+  // }
+
+  const addNewMarker = (country) =>
     setMarkers({
       markers: [
         {
@@ -38,7 +46,6 @@ function App() {
         },
       ],
     });
-  }
 
   const fetchAllCountries = async () => {
     const fetchAllCountries = await fetch(
@@ -61,41 +68,31 @@ function App() {
       ],
     });
   }
-  console.log("allCountries", allCountries);
 
   return (
     <div className="App">
       <div className="main-container">
-        <Globe markers={markers}></Globe>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <Form.Control
               as="select"
               custom
               className="form-control mr-sm-2 w2"
-              value={allCountries}
+              // value={allCountries}
               onChange={handleChange}
             >
-              <option xs>選擇國家</option>
+              <option>選擇國家</option>
               {allCountries.map((c) => (
-                <option>{c}</option>
+                <option key={c}>{c}</option>
               ))}
             </Form.Control>
-            <br/>
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Enter country name or code"
-              aria-label="Search"
-              name="country"
-              value={userInput}
-              onChange={handleChange}
-            />
             <Button className="btn btn-sm btn-outline-secondary" type="submit">
-              Search
+              查詢
             </Button>
           </form>
         </div>
+        <Globe markers={markers}></Globe>
+
         {country ? <CountryDetails country={country}></CountryDetails> : ""}
         <BackToTopArrow></BackToTopArrow>
       </div>

@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 import { memo } from 'react';
 
-const memoizedComponent = React.memo(function Globe({ markers }) {
+const memoizedComponent = memo(function Globe({ markers }) {
   let animation = [];
   let options = {};
   let goToCoordinates = markers.markers[0].coordinates;
