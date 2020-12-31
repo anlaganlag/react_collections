@@ -34,7 +34,7 @@ export default function App() {
     //   }
     // };
 
-    setTest(rollNum);
+    setTest(rollNum());
   }, [rollNum]);
 
   return (
