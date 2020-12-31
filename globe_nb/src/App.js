@@ -24,16 +24,6 @@ function App() {
     addNewMarker(data[0]);
   };
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   fetch(`https://restcountries.eu/rest/v2/name/${userInput}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setCountry(data[0]);
-  //       addNewMarker(data[0]);
-  //     });
-  // }
-
   const addNewMarker = (country) =>
     setMarkers({
       markers: [
@@ -82,8 +72,8 @@ function App() {
               onChange={handleChange}
             >
               <option>選擇國家</option>
-              {allCountries.map((c) => (
-                <option key={c}>{c}</option>
+              {allCountries.map((country) => (
+                <option key={country}>{country}</option>
               ))}
             </Form.Control>
             <Button className="btn btn-sm btn-outline-secondary" type="submit">
@@ -94,7 +84,7 @@ function App() {
         <Globe markers={markers}></Globe>
 
         {country ? <CountryDetails country={country}></CountryDetails> : ""}
-        <BackToTopArrow></BackToTopArrow>
+        <BackToTopArrow/>
       </div>
     </div>
   );
