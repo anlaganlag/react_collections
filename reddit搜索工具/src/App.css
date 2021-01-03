@@ -1,12 +1,12 @@
 body {
-  background-color: lightyellow;
+  background-color: rgb(9, 30, 37);
 }
 ul li {
   margin-top: .3em;
 }
 li a {
   text-decoration:none;
-  color: green;
+  color: #eee;
   font-weight: bolder;
 }
 ul li span{
@@ -75,5 +75,5 @@ a:visited{
 }
 
 a:hover{
-  color: orangered;
+  color: burlywood;
 }
