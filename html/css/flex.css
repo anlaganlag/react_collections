@@ -1,18 +1,13 @@
 .container {
-    display: grid;
-    
-    
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    grid-template-areas: 'a b c'
-                         'd e f'
-                         'g h i';
+  width: 100vw;
+  height: 100vh;
+  border: 3px solid black;
+  display: grid;
+  /* grid-gap:6px */
+}
 
-    grid-auto-flow: column;
-
-
-
-  }
-.container div  {
-    background-color: #bfa;
+li {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
 }
