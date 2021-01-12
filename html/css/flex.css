@@ -1,25 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 
 .container {
-  background-color: #ccc;
-  padding: 10px;
-
-  display: flex;
-  flex-direction:row;
-  justify-content: space-betweenk;
-
+  margin: 20px auto;
+  display: grid;
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 30px;
 }
 
-.item {
+.box1{
+  background-color: orange;
+}
 
-  background-color: #f1325d;
-  padding: 40px;
-  margin: 30px;
-  color: #fff;
-  font-size: 40px;
+.box2{
+  background-color: green;
+}
+.box3{
+  background-color: violet;
+}
+.box4{
+  background-color: red;
+}
+.box5{
+  background-color: blue;
+}
+
+.box6{
+  background-color: brown;
 }
