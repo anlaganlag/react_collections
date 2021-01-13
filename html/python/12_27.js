@@ -1,21 +1,31 @@
-const h = () => {}
+// const foo = async () => {
+//     for (let i = 5; i >= 0; i--) {
+//       await new Promise((r) => setTimeout(r, 1000));
+//       console.log(i)
+//     }
+//   }
+// foo()
 
-
-
-
-
-//执行时 绑定了h和0...
-//g是内部的生成的会被销毁..
-//即首次执行时记住了h和x=0
-const f = (fn,x) => {
-    const g = () => console.log(x)
-    if (x<1){
-        f(g,1)
-    }else {
-        fn()
+const log = console.log;
+function f1(a) {
+  return new Promise((res, rej) => {
+    log(1 + a);
+    if (a === "g") {
+      res(4);
     }
-    
+  });
 }
-f(h,0)
 
-// console.log(f(h,0))
+function f2(b) {
+  return new Promise((res, rej) => {
+    log(3);
+    res("ex" + b);
+  });
+}
+
+f1("g")
+  .then((c) => {
+    log(2);
+    return f2(c);
+  })
+  .then((d) => log(d));
