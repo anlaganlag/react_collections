@@ -1,0 +1,23 @@
+div {
+  width: 249px;
+  height: 35px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: translate(-50%, 50%) rotate(45deg);
+  transition: all 0.05s;
+}
+
+div:hover::after {
+  transform: translate(-50%, 50%) rotate(225deg);
+}
