@@ -1,11 +1,9 @@
-
-
-function debounce(func,delay=250){
-  let timer = null;
-  return () => {
-    let context = this;
-    let args = arguments;
-
-    cle
-  }
+class Dog {
+  a = 5;
+  bark = () => "gal";
 }
+
+const d = new Dog();
+
+console.log("d", d);
+console.log("d.bark()", d.bark());
