@@ -1,5 +1,4 @@
 import React from "react";
-import Row from "./row";
 import Board from "./board";
 
 function App() {

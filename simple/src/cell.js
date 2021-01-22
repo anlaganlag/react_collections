@@ -1,17 +1,17 @@
 import React from "react";
 
-function Cell({ pos, val, handleIt,m }) {
-
+function Cell({ val, handleIt }) {
   return (
-    <span
-      onClick={(e) => {
-        if (val!=="空"){return}
-        console.log("pos,val", e,pos, val);
-        handleIt(pos);
+    <button
+      onClick={() => {
+        if (val !== null) {
+          return;
+        }
+        handleIt(val);
       }}
     >
       {val}
-    </span>
+    </button>
   );
 }
 
