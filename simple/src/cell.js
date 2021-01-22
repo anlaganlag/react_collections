@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function Cell(i) {
-    return (
-        <span onClick={()=>console.log(i.val+"被点击了")}>
-            格子
-        </span>
-    )
+function Cell({ pos, val, handleIt }) {
+  return (
+    <span
+      onClick={(e) => {
+        console.log("pos,val", e,pos, val);
+        handleIt(pos, val);
+      }}
+    >
+      格子
+    </span>
+  );
 }
 
-export default Cell
+export default Cell;

@@ -1,12 +1,12 @@
 import React from "react";
 import Cell from "./cell";
 
-function Row({vals}) {
+function Row({ pos, vals, handleIt }) {
   return (
     <div>
-      <Cell val={vals[0]}/>
-      <Cell val={vals[1]}/>
-      <Cell val={vals[2]}/>
+      <Cell pos={pos[0]} val={vals[0]} handleIt={handleIt} />
+      <Cell pos={pos[1]} val={vals[1]} handleIt={handleIt} />
+      <Cell pos={pos[2]} val={vals[2]} handleIt={handleIt} />
     </div>
   );
 }
