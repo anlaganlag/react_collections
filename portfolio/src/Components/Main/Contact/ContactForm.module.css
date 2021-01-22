@@ -1,0 +1,141 @@
+.contactForm {
+    margin: auto;
+    width: 60%;
+    height: auto;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.formIcon {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    visibility: visible;
+}
+
+.formIconSuccess {
+    color: #4bb543;
+}
+
+.formIcon.formIconError {
+    color: #ff0033;
+}
+
+.errorMessage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 5px;
+    color: #ff0033;
+}
+
+.formControl:last-of-type .errorMessage {
+    bottom: 5px;
+}
+
+.formControl {
+    position: relative;
+    width: 50%;
+    padding: 0.25rem;
+}
+
+.formLabel {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.formInput {
+    width: 100%;
+    height: 2.3rem;
+    padding: 0.5rem;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #b3b3b3b6;
+    background-color: #f1f1f1;
+}
+
+.formInput:focus,
+.formInput:hover {
+    border-bottom: 2px solid var(--underline-color);
+}
+
+.form div:last-child {
+    width: 100%;
+}
+
+.formTextarea {
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #b3b3b3b6;
+    background-color: #f1f1f1;
+}
+
+.dark {
+    background-color: rgba(204, 204, 204, 0.151);
+    color: var(--dark-text);
+}
+
+.submit {
+    text-align: left;
+    margin-left: 0.25rem;
+}
+
+.submitInput {
+    height: 2.6rem;
+    width: 10rem;
+    background-color: var(--secondary-color);
+    font-size: 1.1rem;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+        -4px -4px 12px 0 rgba(255, 255, 255, 0.3);
+    transition: all ease 0.1s;
+    appearance: none;
+}
+
+.submitInput:hover {
+    box-shadow: 8px 8px 12px 0 rgba(0, 0, 0, 0.25),
+        -4px -4px 12px 0 rgba(255, 255, 255, 0.3);
+    transform: scale(0.98);
+    transition: all ease 0.1s;
+}
+
+.submitInput.dark {
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .contactForm {
+        width: 100%;
+    }
+    .form {
+        flex-direction: column;
+    }
+    .form div {
+        width: 100%;
+        padding: 0.25rem;
+        text-align: center;
+    }
+    .submit {
+        text-align: center;
+        margin-left: 0rem;
+    }
+    .submitInput {
+        width: 98%;
+    }
+}

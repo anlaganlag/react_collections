@@ -1,0 +1,34 @@
+.totalStats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+
+.totalLaunches {
+    text-align: center;
+}
+
+.number h3 span {
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.subHeading h4 {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+    .totalStats {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .totalStats {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}

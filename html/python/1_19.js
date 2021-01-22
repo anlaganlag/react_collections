@@ -1,9 +1,15 @@
-class Dog {
-  a = 5;
-  bark = () => "gal";
+let arr = [1,2,[3,4, [5,6, [7, [8, 9, 10]]]]]
+
+function flatten(arr) {
+  return arr.reduce((acc, next)=>{
+    let isArray =  Array.isArray(next)
+    return acc.concat(isArray ? flatten(next) : next)
+  }, [])
 }
 
-const d = new Dog();
-
-console.log("d", d);
-console.log("d.bark()", d.bark());
+if (!Array.prototype.flatten) {
+  Array.prototype.flatten = function() {
+    return flatten(this)
+  }
+}
+console.log(arr.flatten());

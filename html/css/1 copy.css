@@ -1,37 +1,8 @@
-body {
-  display: grid;
-  height: 100vh;
-  grid-template: auto 1fr auto / auto 1fr auto;
-}
-
 .header {
-  background-color: red;
-  grid-column: 1/4;
-  padding: 2em;
-}
-
-.left {
-  background-color: yellow;
-  grid-column: 1/2;
-  padding: 2em;
-
-}
-
-.mid {
-  background-color: teal;
-  grid-column: 2/3;
-
-}
-.right {
-  background-color: orange;
-  grid-column: 3/4;
-  padding: 2em;
-
-}
-
-.footer {
-  background-color: #bfa;
-  grid-column: 1/4;
-  padding: 2em;
-
-}
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
