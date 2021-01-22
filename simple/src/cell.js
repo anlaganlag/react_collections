@@ -1,6 +1,7 @@
 import React from "react";
 
-function Cell({ pos, val, handleIt }) {
+function Cell({ pos, val, handleIt,m }) {
+
   return (
     <span
       onClick={(e) => {
@@ -8,7 +9,7 @@ function Cell({ pos, val, handleIt }) {
         handleIt(pos, val);
       }}
     >
-      格子
+      {val}
     </span>
   );
 }
