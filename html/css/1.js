@@ -1,11 +1,21 @@
-(function IIFE(foo) {
-  foo(window);
-})
+const addLogging = (fn) => (...args) => {
+  console.log(`entering ${fn.name}: ${args})`);
+  const valueToReturn = fn(...args);
+  console.log(`exiting ${fn.name}: ${valueToReturn}`);
+  return valueToReturn;
+};
 
-(function foo(global) {
-  var a = 3;
-  console.log(a); // 3
-  console.log(global.a); // 2
-})
+function subtract(a, b) {
+  b = changeSign(b);
+  return a + b;
+}
 
+function changeSign(c) {
+  return -c;
+}
 
+subtract = addLogging(subtract);
+
+changeSign = addLogging(changeSign);
+
+let x = subtract(7, 5);
