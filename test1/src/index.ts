@@ -1,4 +1,6 @@
-const sum = (a:number,b:number):number => a+b
-console.log(sum(123,567));
+import { i } from './m'
+const sum = (a: number, b: number): number => a + b
+console.log(sum(123, 567));
 
 console.log("哈哈");
+console.log(i);

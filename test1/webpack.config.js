@@ -1,34 +1,35 @@
-const path = require('path')
-const HMTLWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const HMTLWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
-    entry:"./src/index.ts",
+  mode: "development",
 
-    output:{
-        path:path.resolve(__dirname,'dist'),
-        filename:"bundle.js",
+  entry: "./src/index.ts",
 
-    },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
 
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: "ts-loader",
 
-    module:{
-        rules:[
-            {
-                test:/\.ts$/,
-                use:'ts-loader',
+        exclude: /node-modules/,
+      },
+    ],
+  },
 
-                exclude:/node-modules/,
-            }
-        ]
-    },
-
-    plugins:[
-        new HMTLWebpackPlugin(
-            {
-                template:"./src/index.html"
-            }
-        ),
-    ]
-
-
-
-}
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HMTLWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
+  
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
+};
