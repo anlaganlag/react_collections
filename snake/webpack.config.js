@@ -9,9 +9,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    environment:{
-      arrowFunction:false
-    }
+    environment: {
+      arrowFunction: false,
+    },
   },
 
   module: {
@@ -27,10 +27,10 @@ module.exports = {
                   "@babel/preset-env",
                   {
                     targets: {
-                      "chrome": "88",
+                      chrome: "88",
                     },
-                    "corejs": "3",
-                    "useBuiltIns": "usage",
+                    corejs: "3",
+                    useBuiltIns: "usage",
                   },
                 ],
               ],
@@ -42,29 +42,40 @@ module.exports = {
       },
 
       {
-        test:/\.less$/,
-        use:[
+        test: /\.less$/,
+        use: [
           "style-loader",
           "css-loader",
           {
-            loader:"postcss-loader",
-            options:{
-              postcssOptions:{
-                plugins:[
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
                   [
                     "postcss-preset-env",
                     {
-                      browsers:'last 2 versions'
-                    }
-                  ]
-                ]
-              }
-            }
+                      browsers: "last 2 versions",
+                    },
+                  ],
+                ],
+              },
+            },
           },
           "less-loader",
-        ]
+        ],
       },
-
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: "url-loader",
+        // use: [
+        //   {
+        //     loader: "file-loader",
+        //     options:{
+        //       name: '/[name].[ext]',
+        //     }
+        //   },
+        // ],
+      },
     ],
   },
 

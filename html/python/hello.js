@@ -1,5 +1,3 @@
-function sayHello(person) {
-    return 'Hello, ' + person;
-}
-var user = "Tom";
-console.log(sayHello(user));
+var ninja = {};
+ninja.firstName = "Gal";
+ninja.numberOfSwords = 2;

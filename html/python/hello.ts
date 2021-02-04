@@ -1,6 +1,11 @@
-function sayHello(person:string){
-    return 'Hello, ' + person;
+interface Iperson{
+    firstName:string
 }
 
-let user = [0, 1, 2];
-console.log(sayHello(user));
+interface INinja extends Iperson{
+    numberOfSwords:number
+}
+
+let ninja = {} as INinja
+ninja.firstName ="Gal"
+ninja.numberOfSwords =2
