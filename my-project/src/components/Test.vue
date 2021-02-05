@@ -12,12 +12,25 @@
     </ul>
     <button @click="greet('牛逼了')">问好</button>
     <input type="text" @keyup="pressKey" @keyup.enter="enterHit"></input>
+    <hr />
+    <label>姓 </label> <input type="text" v-model="user.first_name"></input>
+    <br />
+        <label>名</label> <input type="text" v-model="user.last_name"></input>
+    <h3>{{fullName}}</h3>
+
+    <h2> {{msg}} </h2>
   </div>
 </template>
 
 <script>
 export default {
   name: "test",
+  props:{
+        msg:{
+            type:String,
+            default:"随便"
+        }
+  },
 
   data() {
     return {
@@ -41,8 +54,13 @@ export default {
     enterHit:function(){
         console.log("按下了回车")
     }
-  }
-};
+    },
+    computed:{
+        fullName:function(){
+            return this.user.first_name + " " + this.user.last_name 
+        }
+    }
+}
 </script>
 
 <style scoped></style>
