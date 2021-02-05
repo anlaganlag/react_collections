@@ -1,47 +1,60 @@
-import React from 'react'
-import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import React from "react";
+import "antd/dist/antd.css";
+import { Button, Space, Upload, Popconfirm,Layout } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+const { Header, Footer, Sider, Content } = Layout;
 
-const { SubMenu } = Menu;
+function App() {
+  return (
+    <>
+      <Layout>
+        <Header>Header</Header>
+        <Content>Content</Content>
+        <Footer>Footer</Footer>
+      </Layout>
 
-class App extends React.Component {
-  state = {
-    current: 'mail',
-  };
+      <Layout>
+        <Header>Header</Header>
+        <Layout>
+          <Sider>Sider</Sider>
+          <Content>Content</Content>
+        </Layout>
+        <Footer>Footer</Footer>
+      </Layout>
 
-  handleClick = e => {
-    console.log('click ', e);
-    this.setState({ current: e.key });
-  };
+      <Layout>
+        <Header>Header</Header>
+        <Layout>
+          <Content>Content</Content>
+          <Sider>Sider</Sider>
+        </Layout>
+        <Footer>Footer</Footer>
+      </Layout>
 
-  render() {
-    const { current } = this.state;
-    return (
-      <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
-        <Menu.Item key="mail" icon={<MailOutlined />}>
-          Navigation One
-        </Menu.Item>
-        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-          Navigation Two
-        </Menu.Item>
-        <SubMenu key="SubMenu" icon={<SettingOutlined />} title="Navigation Three - Submenu">
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu>
-        <Menu.Item key="alipay">
-          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-            Navigation Four - Link
-          </a>
-        </Menu.Item>
-      </Menu>
-    );
-  }
+      <Layout>
+        <Sider>Sider</Sider>
+        <Layout>
+          <Header>Header</Header>
+          <Content>Content</Content>
+          <Footer>Footer</Footer>
+        </Layout>
+      </Layout>
+
+    <Space>
+      Space
+      <Button type="primary">Button</Button>
+      <Upload>
+        <Button>
+          <UploadOutlined /> Click to Upload
+        </Button>
+      </Upload>
+      <Popconfirm title="Are you sure delete this task?" okText="Yes" cancelText="No">
+        <Button>Confirm</Button>
+      </Popconfirm>
+    </Space>
+
+    </>
+  );
 }
 
-export default App
+export default App;
