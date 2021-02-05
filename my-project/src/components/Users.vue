@@ -27,24 +27,7 @@ export default {
   data() {
     return {
       newUser: {},
-      users: [
-        {
-          name: "高方",
-          email: "gal@gal.com",
-          contacted: true,
-        },
-
-        {
-          name: "bestp",
-          email: "bestp@gal.com",
-          contacted: true,
-        },
-        {
-          name: "good",
-          email: "good@gal.com",
-          contacted: false,
-        },
-      ],
+      users: [],
     };
   },
 
@@ -61,6 +44,15 @@ export default {
     deleteUser: function (user) {
       this.users.splice(this.users.indexOf(user), 1);
     },
+  },
+  created: function () {
+    console.log("创建函数开始运行");
+    this.$http
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(function (resp) {
+        console.log(resp.data);
+        this.users = resp.data
+      });
   },
 };
 </script>
