@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <users />
-    <!-- <Test /> -->
-  </div>
+
 </template>
 
 <script>

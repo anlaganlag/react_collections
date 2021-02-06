@@ -3,8 +3,6 @@
 import Vue from "vue";
 import vueResource from "vue-resource";
 import VueRouter from "vue-router";
-import vueRouter from "vue-router";
-import App from "./App";
 import Users from "./components/Users";
 import Test from "./components/Test";
 
