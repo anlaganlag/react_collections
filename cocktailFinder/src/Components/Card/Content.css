@@ -1,0 +1,22 @@
+img {
+    width: 100%;
+    height: 400px;
+}
+
+.WrittenContent {
+    margin-top: 20px;
+    font-family: "Cantarell";
+    margin-left: 2%;
+    color: #4f6d7a;
+}
+
+.Ingredients {
+    list-style-type: circle;
+    margin-left: 10%;
+}
+
+.Instructions {
+    margin-top: 10px;
+    margin-left: 2%;
+    font-family: "Montserrat";
+}

@@ -1,0 +1,8 @@
+.LoadingScreen {
+    font-family: "Oranienbaum";
+    color: #4f6d7a;
+    font-size: 60pt;
+    position: relative;
+    text-align: center;
+    margin-top: 20vh;
+}
