@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=.portfolio, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #709b90;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .portfolio {
+        display: grid;
+        grid-template-columns: repeat(autofill, minmax(100px, 250px));
+        /* background-color: orange; */
+        grid-auto-rows: 1fr;
+      }
+      .portfolio > figure {
+        margin: 0;
+        display: inline-block;
+      }
+      .portfolio img {
+        max-width: 10%;
+      }
+      .portfolio fc {
+        padding: 0.3em 0.8em;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="portfolio">
+      <figure>
+        <img src="images/1.jpg" alt="1" />
+        <fc>111111111111111</fc>
+
+        <img src="images/2.jpg" alt="" />
+        <fc></fc>
+
+        <img src="images/4.jpg" alt="" />
+        <fc></fc>
+
+        <img src="images/5.jpg" alt="" />
+        <fc></fc>
+
+        <img src="images/6.jpg" alt="" />
+        <fc></fc>
+
+        <img src="images/9.png" alt="" />
+        <fc></fc>
+
+        <img src="images/10.png" alt="" />
+        <fc></fc>
+
+        <img src="images/11.png" alt="" />
+        <fc></fc>
+      </figure>
+    </div>
+  </body>
+</html>

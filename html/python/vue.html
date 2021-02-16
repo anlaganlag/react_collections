@@ -10,13 +10,9 @@
   </head>
   <body>
     <div id="root">
-      注册
-      <br />
-      <input v-model="email" :class="{red:email.length < 2}" />
-      <br />
-      <button onclick="console.log('正在注册')" :disabled="email.length<2">
-        提交
-      </button>
+
+      <Questionbox :cats='cats'/>
+      <headerbox :cats='cats'/>
     </div>
   </body>
 </html>
