@@ -12,9 +12,9 @@ new Vue({
   el: "#blog-post-demo",
   data: {
     posts: [
-      { id: 1, title: "一.My journey with Vue" },
-      { id: 2, title: "二.Blogging with Vue" },
-      { id: 3, title: "三.Why Vue is so fun" },
+      { id: 1, title: "一.My journey with Vue" ,content:"最强Pro"},
+      { id: 2, title: "二.Blogging with Vue",content:"天选之人theOne" },
+      { id: 3, title: "三.Why Vue is so fun",content:"价值" },
     ],
   },
 });
