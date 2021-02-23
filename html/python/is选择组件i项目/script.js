@@ -11,8 +11,6 @@ Vue.component("tab-archive", {
 new Vue({
   el: "#dynamic-component-demo",
   data: {
-    checked:false,
-    checkedNames: [],
     currentTab: "Home",
     tabsName: { Home: "首页", Posts: "帖子", Archive: "历史帖子" },
     tabs: ["Home", "Posts", "Archive"],
