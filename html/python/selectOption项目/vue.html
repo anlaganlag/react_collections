@@ -9,9 +9,13 @@
   </head>
   <body>
     <div id="dynamic-component-demo" class="demo">
-      <ul>
-        <li v-for="(item,idx) in movies" :class="{active:idx===curIdx}" @click="liClick(idx)">{{item}}</li>
-      </ul>
+      <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option>Vue</option>
+        <option>人工智能</option>
+        <option>成瘾</option>
+      </select>
+      <span>Selected: {{ selected }}</span>
     </div>
   </body>
 </html>
