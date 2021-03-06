@@ -1,12 +1,12 @@
 body {
-  background-color: rgb(9, 30, 37);
+  background-color: lightgoldenrodyellow
 }
 ul li {
   margin-top: .3em;
 }
 li a {
   text-decoration:none;
-  color: #eee;
+  color: black;
   font-weight: bolder;
 }
 ul li span{

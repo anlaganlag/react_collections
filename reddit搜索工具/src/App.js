@@ -3,7 +3,7 @@ import moment from "moment";
 import "./App.css";
 import useKeyPress from "./useKeyPress";
 
-let initialKeyWordList = ["learnjavascript", "reactJS", "javascript", "vuejs"];
+let initialKeyWordList = ["vuejs", "reactJS", "javascript", "learnjavascript"];
 const KEY = "lsRedditKey";
 export function htmlDecode(input) {
   var doc = new DOMParser().parseFromString(input, "text/html");
@@ -59,7 +59,7 @@ export default function App() {
   //输入的数值
   const [inputValue, setInputValue] = useState("");
   //搜索词
-  const [searchTerms, setSearchTerms] = useState("reactjs");
+  const [searchTerms, setSearchTerms] = useState("vuejs");
   const [history, setHistory] = useState(initialKeyWordList);
   //隐藏不重要的搜索记录
   //是否可以删除或者置顶
@@ -67,7 +67,8 @@ export default function App() {
   const [onTop, setonTop] = useState(false);
   const openPress = useKeyPress("o");
   const delPress = useKeyPress("d");
-  console.log(openPress, typeof openPress);
+  const forwardPress = useKeyPress("f");
+  const backwardPress = useKeyPress("b");
 
   //coding technology software cscareerquestions
   // Update the searchTerms when the user presses enter
@@ -109,11 +110,6 @@ export default function App() {
     }
     setSearchTerms(e.target.textContent.trim());
   };
-  // const handleBackground = () => {
-  //   setisHided(() => !isHided);
-  // };
-  console.log(history);
-  // console.log(isHided);
 
   return (
     <>
@@ -141,15 +137,16 @@ export default function App() {
           ))}
         </p>
 
-        {/* <button className="toTop" onClick={() => setonTop(!onTop)}>
-          {onTop ? "关闭置顶" : "开启置顶"}
-        </button> */}
+  
 
         <button className="BackgroundToggle">
           {openPress ? "更多" : "隐藏"}(O)
         </button>
         <div>
           <p className="searchResultLabel">当前搜索关键词:{searchTerms}</p>
+
+          <button className="BackgroundToggle">
+        </button>
         </div>
       </form>
       <Reddit searchTerms={searchTerms} />
