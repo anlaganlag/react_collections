@@ -4,14 +4,9 @@ import Article from "./Article";
 const Main = () => {
     const articles = [
         {
-            heading: "About Me",
-            p1: `I’m a New York City based front end developer from New
-      Zealand. I love to build visually beautiful, accessible, and
-      user friendly websites.`,
-            p2: `With the use of my skills, my passion is introducing and
-      building an online presence for disadvantaged communities
-      back home in New Zealand.`,
-            p3: `Keep scrolling to see some of my latest work!`,
+            heading: "About",
+            p1: `我是前端工程师 我喜欢工作`,
+            p2: `工作能实现我的价值`,
             technologies: true,
         },
         {
@@ -20,7 +15,7 @@ const Main = () => {
         },
         {
             heading: "Contact",
-            p1: `If you have any questions or would like to chat, feel free to reach out below!`,
+            p1: `现在联系`,
             form: true,
         },
     ];

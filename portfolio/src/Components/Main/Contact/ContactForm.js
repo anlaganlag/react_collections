@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../../../context/ThemeContext";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faExclamationCircle,
@@ -7,24 +6,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import styles from "./ContactForm.module.css";
+import styles from "../../../CSS/Main/ContactForm/ContactForm.module.css";
 
 const ContactForm = () => {
-    const { isLight } = useContext(ThemeContext);
-    const theme = !isLight ? styles.dark : "";
 
-    const toastSuccess = () => {
-        return toast("Great! We'll be in touch soon :)", {
-            toastId: "success",
-        });
-    };
-    const toastError = () => {
-        return toast("Oops! Check your details and try again.", {
-            toastId: "error",
-        });
-    };
     const encode = (data) => {
         return Object.keys(data)
             .map(
@@ -35,6 +20,10 @@ const ContactForm = () => {
             )
             .join("&");
     };
+
+    // const nameError = touched.name && errors.name;
+    // const emailError = touched.email && errors.email;
+    // const messageError = touched.message && errors.message;
 
     return (
         <div className={styles.contactForm}>
@@ -67,19 +56,17 @@ const ContactForm = () => {
                         }),
                     })
                         .then(() => {
-                            toastSuccess();
                             setSubmitting(false);
                             console.log(values);
                             resetForm();
                         })
                         .catch((error) => {
                             console.log(error);
-                            toastError();
                             setSubmitting(false);
                         });
                 }}
             >
-                {({ errors, touched }) => (
+                {({ errors, touched, isSubmitting }) => (
                     <Form>
                         <input type="hidden" name="form-name" value="contact" />
                         <div className={styles.form}>
@@ -94,8 +81,8 @@ const ContactForm = () => {
                                     type="text"
                                     name="name"
                                     id="name"
-                                    placeholder="Name"
-                                    className={`${styles.formInput} ${theme}`}
+                                    placeholder="姓名"
+                                    className={styles.formInput}
                                 />
 
                                 {touched.name && !errors.name && (
@@ -129,8 +116,8 @@ const ContactForm = () => {
                                     type="email"
                                     name="email"
                                     id="email"
-                                    placeholder="Email"
-                                    className={`${styles.formInput} ${theme}`}
+                                    placeholder="邮箱"
+                                    className={styles.formInput}
                                 />
 
                                 {touched.email && !errors.email && (
@@ -163,9 +150,9 @@ const ContactForm = () => {
                                 <Field
                                     name="message"
                                     id="message"
-                                    placeholder="Message"
+                                    placeholder="内容"
                                     as="textarea"
-                                    className={`${styles.formInput} ${styles.formTextarea} ${theme}`}
+                                    className={`${styles.formInput} ${styles.formTextarea}`}
                                 />
 
                                 {touched.message && !errors.message && (
@@ -192,9 +179,9 @@ const ContactForm = () => {
                         <div className={styles.submit}>
                             <input
                                 type="submit"
-                                value="Submit"
+                                value="提交"
                                 id="submitBtn"
-                                className={`${styles.submitInput} ${theme}`}
+                                className={styles.submitInput}
                             />
                         </div>
                     </Form>

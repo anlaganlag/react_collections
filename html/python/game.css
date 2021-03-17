@@ -1,0 +1,36 @@
+li {
+    list-style: none;
+}
+/* 去掉小圆点 */
+.downllis {
+    width: 1200px;
+}
+/* 总宽1200px */
+
+.downllis>li {
+    width: 593px;
+    height: 240px;
+    float: left;
+    border-bottom: 1px solid #cacaca;
+}
+/* 利用浮动从垂直变成了水平  */
+
+.downllis>li .item {
+    width: 566px;
+    height: 180px;
+}
+
+/* 双盒子模型即外面的盒子是li 里面的盒子是item */
+
+.downllis>li .item .img {
+    height: 100%;
+    width: 150px;
+    float: left;
+    border-radius: 4px;
+    overflow: hidden;
+}
+/* 为什么用双盒子模型即外面的盒子li可以float 里面盒子的元素比如img也float */
+
+
+
+
