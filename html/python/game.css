@@ -1,36 +1,166 @@
-li {
-    list-style: none;
-}
-/* 去掉小圆点 */
-.downllis {
-    width: 1200px;
-}
-/* 总宽1200px */
-
-.downllis>li {
-    width: 593px;
-    height: 240px;
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: LightGray;
+    font-family: "Lucida Console", Monaco, monospace
+  }
+  
+  .container {
+    display: flex;
+    /* display: flex | inline-flex */
+    flex-wrap: wrap;
+    /* flex-wrap: nowrap | wrap | wrap-reverse */
+    justify-content: center;
+    /* justify-content: flex-start | flex-end | center | space-between | space-around */
+  }
+  
+  .poker {
     float: left;
-    border-bottom: 1px solid #cacaca;
-}
-/* 利用浮动从垂直变成了水平  */
-
-.downllis>li .item {
-    width: 566px;
-    height: 180px;
-}
-
-/* 双盒子模型即外面的盒子是li 里面的盒子是item */
-
-.downllis>li .item .img {
+    width: 200px;
+    height: 280px;
+    margin: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 6px;
+    position: relative;
+    background: #FFF;
+    transition: all 0.5s;
+  }
+  
+  .poker:hover {
+    box-shadow: 0px 0px 16px 2px gray;
+    transition: all 0.5s;
+  }
+  
+  .poker:before,
+  .poker:after {
+    width: 10px;
+    position: absolute;
+    word-wrap: break-word;
+  }
+  
+  .poker:before {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .poker:after {
+    right: 10px;
+    bottom: 10px;
+    transform: rotate(180deg);
+  }
+  
+  .joker:before,
+  .joker:after {
+    content: 'JOKER';
+    font-size: 16px;
+  }
+  
+  .ace:before,
+  .ace:after {
+    content: 'A';
+  }
+  
+  .two:before,
+  .two:after {
+    content: '2';
+  }
+  
+  .three:before,
+  .three:after {
+    content: '3';
+  }
+  
+  .four:before,
+  .four:after {
+    content: '4';
+  }
+  
+  .five:before,
+  .five:after {
+    content: '5';
+  }
+  
+  .six:before,
+  .six:after {
+    content: '6';
+  }
+  
+  .seven:before,
+  .seven:after {
+    content: '7';
+  }
+  
+  .eight:before,
+  .eight:after {
+    content: '8';
+  }
+  
+  .nine:before,
+  .nine:after {
+    content: '9';
+  }
+  
+  .ten:before,
+  .ten:after {
+    content: '10';
+  }
+  
+  .jack:before,
+  .jack:after {
+    content: 'J';
+  }
+  
+  .queen:before,
+  .queen:after {
+    content: 'Q';
+  }
+  
+  .king:before,
+  .king:after {
+    content: 'K';
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .flower {
     height: 100%;
-    width: 150px;
-    float: left;
-    border-radius: 4px;
-    overflow: hidden;
-}
-/* 为什么用双盒子模型即外面的盒子li可以float 里面盒子的元素比如img也float */
-
-
-
-
+    position: relative;
+  }
+  
+  .flower:before {
+    top: 30px;
+    left: 10px;
+    position: absolute;
+  }
+  
+  .flower:after {
+    bottom: 30px;
+    right: 10px;
+    position: absolute;
+    transform: rotate(180deg);
+  }
+  
+  .spades:before,
+  .spades:after {
+    content: "♠";
+  }
+  
+  .hearts:before,
+  .hearts:after {
+    content: "♥";
+  }
+  
+  .clubs:before,
+  .clubs:after {
+    content: "♣";
+  }
+  
+  .diams:before,
+  .diams:after {
+    content: "♦";
+  }
