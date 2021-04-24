@@ -13,7 +13,10 @@ export function htmlDecode(input) {
 function Reddit({ searchTerms }) {
   const [posts, setPosts] = useState([]);
   const [error, seterror] = useState(null);
-
+  function googletitle (title){
+    const prefixURL = "https://www.google.com/search?q=site%3Areddit.com+"
+    return prefixURL+"\""+title.replace(/\s+/g,"+")+"\""
+  }
   useEffect(() => {
     // Fetch the data when the component mounts
     fetch(`https://www.reddit.com/r/${searchTerms}.json`)
@@ -41,8 +44,12 @@ function Reddit({ searchTerms }) {
       <ul>
         {posts.map((word, idx) => (
           <li key={word.id}>
-            <a href={word.url}>
+            <a href={word.url} className="link">
               {idx + 1} .&nbsp;{htmlDecode(word.title)}
+            </a>
+
+            <a href={googletitle(htmlDecode(word.title))} className="google">
+                 {" "+"Search"}
             </a>
             <span className="time">
               {"update "}

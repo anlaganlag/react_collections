@@ -9,9 +9,16 @@ li a {
   color: black;
   font-weight: bolder;
 }
-ul li span{
+.link{
+  color:blue
+}
+.time{
   margin-left: 1em;
   font-size: 0.4em;
+}
+.google {
+  font-size:0.5em;
+  color:purple
 }
 form input {
   width: 25vw;
